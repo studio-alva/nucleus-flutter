@@ -21,7 +21,12 @@ class AssetStyles {
     fontWeight: FontWeight.w700,
     color: AssetColors.inkDarkest,
   );
-  static const TextStyle h4 = TextStyle();
+  static const TextStyle h4 = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14,
+    fontWeight: FontWeight.w700,
+    color: AssetColors.inkDarkest,
+  );
   static const TextStyle h5 = TextStyle();
 
   /* Label Button */

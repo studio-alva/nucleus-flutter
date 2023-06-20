@@ -1,6 +1,12 @@
 class AssetPaths {
   static const String imageGetStarted = "assets/images/bg_get_started.png";
   static const String imageOnFirst1 = "assets/images/onf1.png";
+  static const String imageMatahari = "assets/images/matahari.png";
+  static const String imageThumb1 = "assets/images/thumb1.png";
+
+  static const String imagePost1 = "assets/images/post1.png";
+  static const String imagePost2 = "assets/images/post2.png";
+  static const String imagePost3 = "assets/images/post3.png";
 
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";

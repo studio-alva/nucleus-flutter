@@ -7,18 +7,23 @@ class SelectItem1 extends StatelessWidget {
   String? text;
   Color? bgColor;
   TextStyle? style;
+  EdgeInsetsGeometry? padding;
+  EdgeInsetsGeometry? margin;
   SelectItem1({
     super.key,
     this.border = false,
     required this.text,
     this.bgColor = AssetColors.skyLighter,
     this.style,
+    this.padding = const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+    this.margin,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+      padding: padding,
+      margin: margin,
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(30),
