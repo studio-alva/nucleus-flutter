@@ -28,6 +28,8 @@ class StepTwoPerson extends StatelessWidget {
                 InputCustom(
                   controller: controllerEmail,
                   inputType: TextInputType.emailAddress,
+                  hintText: "input email address",
+                  label: const Text("Email"),
                 ),
                 verticalSpace(50),
               ],

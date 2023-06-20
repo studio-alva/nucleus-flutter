@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucleus_ui_app/config/config.dart';
 import 'package:nucleus_ui_app/ui_features/pages/personalization/step/step_first.dart';
 import 'package:nucleus_ui_app/ui_features/pages/personalization/step/step_second.dart';
-import 'package:nucleus_ui_app/ui_features/pages/personalization/step/step_third.dart';
+
 import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_primary.dart';
 
 class PersonalizationSeconPages extends StatefulWidget {
