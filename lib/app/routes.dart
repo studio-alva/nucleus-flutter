@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nucleus_ui_app/ui_features/pages/home/all_items_pages.dart';
 import 'package:nucleus_ui_app/ui_features/pages/location/location_pages.dart';
 import 'package:nucleus_ui_app/ui_features/pages/personalization/personalization_second_page.dart';
 import '../ui_features/pages/personalization/personalization_first_page.dart';
@@ -19,6 +20,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   PersonalizationSeconPages.personalizationSecondPage: (context) =>
       const PersonalizationSeconPages(),
   ChooseLocationPages.locationPages: (context) => const ChooseLocationPages(),
+  HomeAllItemsPages.homeAllItemsPages: (context) => const HomeAllItemsPages(),
 };
 
-String initialRoutes = ChooseLocationPages.locationPages;
+String initialRoutes = HomeAllItemsPages.homeAllItemsPages;
