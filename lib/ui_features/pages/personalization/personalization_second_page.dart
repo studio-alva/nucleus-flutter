@@ -19,7 +19,7 @@ class _PersonalizationSeconPagesState extends State<PersonalizationSeconPages>
   late TabController _tabController;
   late int currenStep;
   late List<Widget> stepWidget;
-  int maxStep = 3;
+  late int maxStep;
 
   @override
   void initState() {
@@ -28,10 +28,10 @@ class _PersonalizationSeconPagesState extends State<PersonalizationSeconPages>
     currenStep = 1;
     stepWidget = [
       const StepFirstPerson(),
-      const StepTwoPerson(),
-      const StepThirdPerson(),
+      StepTwoPerson(),
     ];
 
+    maxStep = stepWidget.length;
     _tabController = TabController(vsync: this, length: stepWidget.length);
   }
 
@@ -76,7 +76,7 @@ class _PersonalizationSeconPagesState extends State<PersonalizationSeconPages>
                   );
                 },
               ),
-              Flexible(
+              Expanded(
                 child: TabBarView(
                   controller: _tabController,
                   children: stepWidget,
