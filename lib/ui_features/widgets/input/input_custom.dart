@@ -13,6 +13,7 @@ class InputCustom extends StatelessWidget {
   final Widget? label;
   final String? hintText;
   final bool obsecure;
+  final FocusNode? focusNode;
   const InputCustom({
     super.key,
     required this.controller,
@@ -21,11 +22,13 @@ class InputCustom extends StatelessWidget {
     this.label,
     this.hintText = "Input Number",
     this.obsecure = false,
+    this.focusNode,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
