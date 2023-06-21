@@ -14,6 +14,7 @@ class InputCustom extends StatelessWidget {
   final String? hintText;
   final bool obsecure;
   final FocusNode? focusNode;
+  final EdgeInsetsGeometry? contentPadding;
   const InputCustom({
     super.key,
     required this.controller,
@@ -23,6 +24,7 @@ class InputCustom extends StatelessWidget {
     this.hintText = "Input Number",
     this.obsecure = false,
     this.focusNode,
+    this.contentPadding,
   });
 
   @override
@@ -30,14 +32,14 @@ class InputCustom extends StatelessWidget {
     return TextField(
       controller: controller,
       decoration: InputDecoration(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        prefixIcon: prefixIcon,
-        hintStyle: AssetStyles.labelMdMdReg,
-        hintText: hintText,
-        label: label,
-      ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          prefixIcon: prefixIcon,
+          hintStyle: AssetStyles.labelMdMdReg,
+          hintText: hintText,
+          label: label,
+          contentPadding: contentPadding),
       style: AssetStyles.labelMdMdReg.copyWith(
         color: AssetColors.inkDarkest,
       ),

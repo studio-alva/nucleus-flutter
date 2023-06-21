@@ -47,11 +47,11 @@ class _MainHomePagesState extends State<MainHomePages> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          padding: const EdgeInsets.only(top: 30),
           width: screenWidth(context),
           height: screenHeight(context),
           child: Column(
             children: [
-              verticalSpace(30),
               Flexible(
                 child: ListView(
                   children: [
@@ -94,7 +94,7 @@ class _MainHomePagesState extends State<MainHomePages> {
                       ),
                     ),
                     verticalSpace(20),
-                    (posts.length != 0)
+                    (posts.isNotEmpty)
                         ? PostThumbBig(
                             data: posts[0],
                           )

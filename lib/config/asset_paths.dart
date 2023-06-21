@@ -3,6 +3,7 @@ class AssetPaths {
   static const String imageOnFirst1 = "assets/images/onf1.png";
   static const String imageMatahari = "assets/images/matahari.png";
   static const String imageThumb1 = "assets/images/thumb1.png";
+  static const String imageAvatar1 = "assets/images/avatar1.png";
 
   static const String imagePost1 = "assets/images/post1.png";
   static const String imagePost2 = "assets/images/post2.png";
