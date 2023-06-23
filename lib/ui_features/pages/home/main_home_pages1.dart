@@ -4,6 +4,7 @@ import '../../../ui_features/widgets/input/select_item1.dart';
 import '../../widgets/home/greeting_header.dart';
 import '../../widgets/home/post_thumb_big.dart';
 import '../../widgets/home/post_thumb_small.dart';
+import '../../widgets/navbar/navbar_custom1.dart';
 
 class MainHomePages extends StatefulWidget {
   const MainHomePages({super.key});
@@ -122,25 +123,7 @@ class _MainHomePagesState extends State<MainHomePages> {
                   ],
                 ),
               ),
-              Container(
-                height: 50,
-                child: Row(
-                  children: [1, 2, 3, 4]
-                      .map(
-                        (e) => Flexible(
-                          flex: 1,
-                          child: Container(
-                            margin: const EdgeInsets.all(15),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(),
-                            ),
-                          ),
-                        ),
-                      )
-                      .toList(),
-                ),
-              ),
+              const NavBarCustom1(),
             ],
           ),
         ),

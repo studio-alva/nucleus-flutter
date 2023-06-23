@@ -9,6 +9,11 @@ class AssetPaths {
   static const String imagePost2 = "assets/images/post2.png";
   static const String imagePost3 = "assets/images/post3.png";
 
+  static const String imageHits1 = "assets/images/hits1.png";
+  static const String imageHits2 = "assets/images/hits2.png";
+  static const String imageHits3 = "assets/images/hits3.png";
+  static const String imageHits4 = "assets/images/hits4.png";
+
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";
   static const String iconSearch = "assets/icons/ic_search.svg";

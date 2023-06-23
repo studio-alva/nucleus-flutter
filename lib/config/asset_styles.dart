@@ -51,6 +51,13 @@ class AssetStyles {
     color: AssetColors.inkLight,
   );
 
+  static const TextStyle labelMdSmReg1 = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AssetColors.inkDarkest,
+  );
+
   static const TextStyle labelMdMdReg = TextStyle(
     fontFamily: 'Inter',
     fontSize: 16,

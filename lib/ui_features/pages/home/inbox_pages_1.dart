@@ -71,8 +71,6 @@ class InboxPages1 extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController search = TextEditingController();
 
-    print(data.where((element) => element["read"] == false).length);
-
     return Scaffold(
       body: SafeArea(
         child: Container(
