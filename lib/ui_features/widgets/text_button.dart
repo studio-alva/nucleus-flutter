@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucleus_ui_app/config/asset_styles.dart';
 
+// ignore: must_be_immutable
 class TextButtonCustom extends StatelessWidget {
   String text;
   final Function() onTap;

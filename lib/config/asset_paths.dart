@@ -14,6 +14,14 @@ class AssetPaths {
   static const String imageHits3 = "assets/images/hits3.png";
   static const String imageHits4 = "assets/images/hits4.png";
 
+  static const String iconWho = "assets/images/whoIcon.png";
+  static const String iconT3 = "assets/images/t3.png";
+  static const String iconFs = "assets/images/fsIcon.png";
+
+  static const String imagePostWho = "assets/images/whopost.png";
+  static const String imagePostT3 = "assets/images/t3Post.png";
+  static const String imagePostFs = "assets/images/fsPost.png";
+
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";
   static const String iconSearch = "assets/icons/ic_search.svg";

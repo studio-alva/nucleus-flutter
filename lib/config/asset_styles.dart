@@ -15,6 +15,14 @@ class AssetStyles {
     fontWeight: FontWeight.w700,
     color: AssetColors.inkDarkest,
   );
+
+  static const TextStyle h2i = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    color: AssetColors.inkDarkest,
+  );
+
   static const TextStyle h3 = TextStyle(
     fontFamily: 'Inter',
     fontSize: 16,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:nucleus_ui_app/ui_features/pages/home/all_items_pages.dart';
 import 'package:nucleus_ui_app/ui_features/pages/home/inbox_pages_1.dart';
 import 'package:nucleus_ui_app/ui_features/pages/home/main_home.dart';
@@ -11,6 +12,7 @@ import '../ui_features/pages/launchscreen/get_started_pages.dart';
 import '../ui_features/pages/onboarding/onboarding_pages.dart';
 import '../ui_features/pages/signin_signup/signin_pages_by_email.dart';
 import '../ui_features/pages/signin_signup/signin_pages_by_number.dart';
+import '../ui_features/pages/coverages/discover_explore.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   GetStartedPages.launshScreen: (context) => const GetStartedPages(),
@@ -27,6 +29,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   MainHomePages.mainHomePages: (context) => const MainHomePages(),
   InboxPages1.inboxPages: (context) => InboxPages1(),
   HomePages1.homePages: (context) => HomePages1(),
+  DiscoverExplorePages.discoverPages: (context) => DiscoverExplorePages(),
 };
 
-String initialRoutes = HomePages1.homePages;
+String initialRoutes = DiscoverExplorePages.discoverPages;
