@@ -13,6 +13,8 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
   final double? elevation;
   final List<Widget>? actions;
   final Function()? onTapBack;
+  TextStyle? textStyle = AssetStyles.h3.copyWith(fontWeight: FontWeight.w500);
+  Color? iconColor = AssetColors.inkDarkest;
   AppBarPrimary({
     super.key,
     this.backgroundColor,
@@ -23,6 +25,8 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
     this.elevation,
     this.actions,
     this.onTapBack,
+    this.textStyle,
+    this.iconColor,
   });
 
   @override
@@ -32,7 +36,7 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       title: Text(
         text ?? "",
-        style: AssetStyles.h3.copyWith(fontWeight: FontWeight.w500),
+        style: textStyle,
       ),
       backgroundColor: backgroundColor ?? Colors.transparent,
       bottomOpacity: 0.0,
@@ -50,6 +54,7 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
                 },
                 icon: SvgPicture.asset(
                   AssetPaths.iconBack,
+                  color: iconColor,
                 ),
               )
           : null,

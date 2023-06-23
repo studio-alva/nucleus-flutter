@@ -9,6 +9,7 @@ class ButtonPrimary extends StatelessWidget {
   TextStyle? style;
   Color? color;
   Function() onTap;
+  double? radius;
   EdgeInsetsGeometry? padding;
   ButtonPrimary({
     super.key,
@@ -19,6 +20,7 @@ class ButtonPrimary extends StatelessWidget {
     this.style = AssetStyles.labelButtonPrimary,
     this.color = AssetColors.primaryColor,
     this.padding,
+    this.radius = 20,
   });
 
   @override
@@ -30,7 +32,7 @@ class ButtonPrimary extends StatelessWidget {
         width: width,
         padding: padding,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(radius!),
           color: color,
         ),
         child: Center(

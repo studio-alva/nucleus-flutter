@@ -13,6 +13,7 @@ import '../ui_features/pages/onboarding/onboarding_pages.dart';
 import '../ui_features/pages/signin_signup/signin_pages_by_email.dart';
 import '../ui_features/pages/signin_signup/signin_pages_by_number.dart';
 import '../ui_features/pages/coverages/discover_explore.dart';
+import '../ui_features/pages/contents/contents_detail.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   GetStartedPages.launshScreen: (context) => const GetStartedPages(),
@@ -30,6 +31,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   InboxPages1.inboxPages: (context) => InboxPages1(),
   HomePages1.homePages: (context) => HomePages1(),
   DiscoverExplorePages.discoverPages: (context) => DiscoverExplorePages(),
+  ContentDetailPages.contentDetail: (context) => ContentDetailPages(),
 };
 
-String initialRoutes = DiscoverExplorePages.discoverPages;
+String initialRoutes = ContentDetailPages.contentDetail;

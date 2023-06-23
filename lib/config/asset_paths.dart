@@ -22,12 +22,16 @@ class AssetPaths {
   static const String imagePostT3 = "assets/images/t3Post.png";
   static const String imagePostFs = "assets/images/fsPost.png";
 
+  static const String imageDetail = "assets/images/detail.png";
+
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";
   static const String iconSearch = "assets/icons/ic_search.svg";
   static const String iconPlace = "assets/icons/ic_place.svg";
   static const String iconSettings = "assets/icons/ic_setting.svg";
+  static const String iconMusic = "assets/icons/ic_musik.svg";
   static const String iconNoImages = "assets/icons/noimg.svg";
+  static const String iconShare = "assets/icons/ic_share.svg";
 
   //flag
   static const String iconIdn = "assets/icons/idn.png";
