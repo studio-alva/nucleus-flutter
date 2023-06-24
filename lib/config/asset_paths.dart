@@ -23,6 +23,7 @@ class AssetPaths {
   static const String imagePostFs = "assets/images/fsPost.png";
 
   static const String imageHighlight = "assets/images/bgHighlight.png";
+  static const String imagePost = "assets/images/post.png";
 
   static const String imageDetail = "assets/images/detail.png";
 

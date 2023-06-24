@@ -14,6 +14,7 @@ import '../ui_features/pages/signin_signup/signin_pages_by_email.dart';
 import '../ui_features/pages/signin_signup/signin_pages_by_number.dart';
 import '../ui_features/pages/coverages/discover_explore.dart';
 import '../ui_features/pages/contents/contents_detail.dart';
+import '../ui_features/pages/contents/content_post_detail.dart';
 import '../ui_features/pages/highlights/highlight_pages.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
@@ -34,6 +35,8 @@ Map<String, Widget Function(BuildContext)> routes = {
   DiscoverExplorePages.discoverPages: (context) => DiscoverExplorePages(),
   ContentDetailPages.contentDetail: (context) => const ContentDetailPages(),
   HighLightsPages.highlightsPages: (context) => const HighLightsPages(),
+  ContentDetailPostPages.contentPostDetail: (context) =>
+      ContentDetailPostPages()
 };
 
-String initialRoutes = HighLightsPages.highlightsPages;
+String initialRoutes = ContentDetailPostPages.contentPostDetail;
