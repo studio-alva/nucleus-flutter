@@ -11,4 +11,5 @@ class AssetColors {
   static const Color bgSecondary = Color(0XFFDAE2EB);
   static const Color textGrey = Color(0XFFAFBCCB);
   static const Color inkLight = Color(0xFF6C7072);
+  static const Color bgHighLight = Color(0XFFECF0F3);
 }
