@@ -35,7 +35,7 @@ class AssetPaths {
   static const String iconMusic = "assets/icons/ic_musik.svg";
   static const String iconNoImages = "assets/icons/noimg.svg";
   static const String iconShare = "assets/icons/ic_share.svg";
-
+  static const String iconVoice = "assets/icons/voice.svg";
   //flag
   static const String iconIdn = "assets/icons/idn.png";
 }

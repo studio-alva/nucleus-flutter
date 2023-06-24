@@ -8,6 +8,7 @@ import '../../../config/ui_helper.dart';
 
 class InputCustom extends StatelessWidget {
   final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final TextInputType? inputType;
   final TextEditingController controller;
   final Widget? label;
@@ -25,6 +26,7 @@ class InputCustom extends StatelessWidget {
     this.obsecure = false,
     this.focusNode,
     this.contentPadding,
+    this.suffixIcon,
   });
 
   @override
@@ -36,6 +38,7 @@ class InputCustom extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon,
           hintStyle: AssetStyles.labelMdMdReg,
           hintText: hintText,
           label: label,

@@ -16,6 +16,7 @@ import '../ui_features/pages/coverages/discover_explore.dart';
 import '../ui_features/pages/contents/contents_detail.dart';
 import '../ui_features/pages/contents/content_post_detail.dart';
 import '../ui_features/pages/highlights/highlight_pages.dart';
+import '../ui_features/pages/search/search_pages.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   GetStartedPages.launshScreen: (context) => const GetStartedPages(),
@@ -36,7 +37,8 @@ Map<String, Widget Function(BuildContext)> routes = {
   ContentDetailPages.contentDetail: (context) => const ContentDetailPages(),
   HighLightsPages.highlightsPages: (context) => const HighLightsPages(),
   ContentDetailPostPages.contentPostDetail: (context) =>
-      ContentDetailPostPages()
+      ContentDetailPostPages(),
+  SearchPages.searchPages: (context) => SearchPages(),
 };
 
-String initialRoutes = ContentDetailPostPages.contentPostDetail;
+String initialRoutes = SearchPages.searchPages;
