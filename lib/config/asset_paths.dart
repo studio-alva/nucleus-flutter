@@ -24,8 +24,8 @@ class AssetPaths {
 
   static const String imageHighlight = "assets/images/bgHighlight.png";
   static const String imagePost = "assets/images/post.png";
-
   static const String imageDetail = "assets/images/detail.png";
+  static const String imageCart = "assets/images/cart.png";
 
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";
@@ -36,6 +36,8 @@ class AssetPaths {
   static const String iconNoImages = "assets/icons/noimg.svg";
   static const String iconShare = "assets/icons/ic_share.svg";
   static const String iconVoice = "assets/icons/voice.svg";
+  static const String iconClose = "assets/icons/ic_close.svg";
+  static const String iconAdd = "assets/icons/ic_add.svg";
   //flag
   static const String iconIdn = "assets/icons/idn.png";
 }
