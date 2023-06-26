@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/button/button_icon_rounded.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/button_primary.dart';
-
+import '../../../config/config.dart';
+import '../../../ui_features/widgets/button/button_icon_rounded.dart';
+import '../../../ui_features/widgets/button_primary.dart';
 import '../../widgets/cart/cart_detail.dart';
 
 class AddToCartPages extends StatelessWidget {
