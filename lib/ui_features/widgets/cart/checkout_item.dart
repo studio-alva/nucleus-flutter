@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nucleus_ui_app/ui_features/widgets/text_button.dart';
 import '../../../config/config.dart';
 
-class FilterComboBox extends StatelessWidget {
+class CheckOutItem extends StatelessWidget {
   String? title;
   String? subTitle;
   Function() onTap;
   String? icon;
 
-  FilterComboBox({
+  CheckOutItem({
     super.key,
     this.title,
     this.subTitle,
@@ -37,10 +38,19 @@ class FilterComboBox extends StatelessWidget {
               ),
             ],
           ),
-          SvgPicture.asset(
-            icon!,
-            width: 10,
-            height: 10,
+          TextButtonCustom(
+            text: "Edit",
+            onTap: onTap,
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 1,
+                color: AssetColors.primaryColor,
+              ),
+              borderRadius: BorderRadius.circular(
+                20,
+              ),
+            ),
           ),
         ],
       ),

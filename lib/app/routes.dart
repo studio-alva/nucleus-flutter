@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui_features/pages/checkout/checkout_pages.dart';
 import '../ui_features/pages/filter/filter_pages.dart';
 import '../ui_features/pages/bottom_sheet/add_to_cart_pages.dart';
 import '../ui_features/pages/home/all_items_pages.dart';
@@ -47,7 +48,8 @@ Map<String, Widget Function(BuildContext)> routes = {
   AddToCartPages.addToCartPages: (context) => const AddToCartPages(),
   EmptyStatePages.emptyStatePages: (context) => const EmptyStatePages(),
   MapPages.mapPages: (context) => const MapPages(),
-  FilterPages.filterPages: (context) => FilterPages(),
+  FilterPages.filterPages: (context) => const FilterPages(),
+  CheckoutPages.checkoutPages: (context) => const CheckoutPages(),
 };
 
-String initialRoutes = FilterPages.filterPages;
+String initialRoutes = CheckoutPages.checkoutPages;
