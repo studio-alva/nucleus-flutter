@@ -28,6 +28,9 @@ class AssetPaths {
   static const String imageCart = "assets/images/cart.png";
   static const String imageEmpty = "assets/images/empty.png";
 
+  static const String imageHotel1 = "assets/images/hotel1.jpg";
+  static const String imageHotel2 = "assets/images/hotel2.jpg";
+
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";
   static const String iconSearch = "assets/icons/ic_search.svg";
@@ -39,6 +42,7 @@ class AssetPaths {
   static const String iconVoice = "assets/icons/voice.svg";
   static const String iconClose = "assets/icons/ic_close.svg";
   static const String iconAdd = "assets/icons/ic_add.svg";
+  static const String iconRating = "assets/icons/ic_rating.svg";
   //flag
   static const String iconIdn = "assets/icons/idn.png";
 }

@@ -19,6 +19,7 @@ import '../ui_features/pages/highlights/highlight_pages.dart';
 import '../ui_features/pages/search/search_pages.dart';
 import '../ui_features/pages/search/search_result.dart';
 import '../ui_features/pages/empty_state/empty_state_pages.dart';
+import '../ui_features/pages/map/map_pages.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   GetStartedPages.launshScreen: (context) => const GetStartedPages(),
@@ -43,7 +44,8 @@ Map<String, Widget Function(BuildContext)> routes = {
   SearchPages.searchPages: (context) => SearchPages(),
   SearchResultPgaes.searchResult: (context) => SearchResultPgaes(),
   AddToCartPages.addToCartPages: (context) => const AddToCartPages(),
-  EmptyStatePages.emptyStatePages: (context) => EmptyStatePages(),
+  EmptyStatePages.emptyStatePages: (context) => const EmptyStatePages(),
+  MapPages.mapPages: (context) => MapPages(),
 };
 
-String initialRoutes = EmptyStatePages.emptyStatePages;
+String initialRoutes = MapPages.mapPages;

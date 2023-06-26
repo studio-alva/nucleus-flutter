@@ -12,6 +12,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.5
   faker: ^2.1.0
+  map: ^1.4.1
+  latlng: ^0.2.1
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
