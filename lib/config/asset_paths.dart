@@ -33,6 +33,7 @@ class AssetPaths {
 
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";
+  static const String iconUp = "assets/icons/ic_arrow_up.svg";
   static const String iconSearch = "assets/icons/ic_search.svg";
   static const String iconPlace = "assets/icons/ic_place.svg";
   static const String iconSettings = "assets/icons/ic_setting.svg";

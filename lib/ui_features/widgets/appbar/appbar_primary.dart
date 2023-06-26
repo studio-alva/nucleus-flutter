@@ -13,7 +13,10 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
   final double? elevation;
   final List<Widget>? actions;
   final Function()? onTapBack;
-  TextStyle? textStyle = AssetStyles.h3.copyWith(fontWeight: FontWeight.w500);
+  TextStyle? textStyle = AssetStyles.h3.copyWith(
+    fontWeight: FontWeight.w500,
+    color: AssetColors.inkDarkest,
+  );
   Color? iconColor = AssetColors.inkDarkest;
   AppBarPrimary({
     super.key,
