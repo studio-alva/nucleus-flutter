@@ -32,6 +32,18 @@ class _FilterPagesState extends State<FilterPages> {
         textStyle: AssetStyles.h3.copyWith(
           color: AssetColors.inkDarkest,
         ),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "Reset",
+              style: AssetStyles.h3.copyWith(
+                color: AssetColors.primaryColor,
+              ),
+            ),
+          ),
+          horizontalSpace(15),
+        ],
       ),
       body: SafeArea(
         child: Container(
