@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/ui_features/pages/bottom_sheet/add_to_cart_pages.dart';
-
+import '../ui_features/pages/bottom_sheet/add_to_cart_pages.dart';
 import '../ui_features/pages/home/all_items_pages.dart';
 import '../ui_features/pages/home/inbox_pages_1.dart';
 import '../ui_features/pages/home/main_home.dart';
@@ -19,6 +18,7 @@ import '../ui_features/pages/contents/content_post_detail.dart';
 import '../ui_features/pages/highlights/highlight_pages.dart';
 import '../ui_features/pages/search/search_pages.dart';
 import '../ui_features/pages/search/search_result.dart';
+import '../ui_features/pages/empty_state/empty_state_pages.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   GetStartedPages.launshScreen: (context) => const GetStartedPages(),
@@ -42,7 +42,8 @@ Map<String, Widget Function(BuildContext)> routes = {
       ContentDetailPostPages(),
   SearchPages.searchPages: (context) => SearchPages(),
   SearchResultPgaes.searchResult: (context) => SearchResultPgaes(),
-  AddToCartPages.addToCartPages: (context) => AddToCartPages(),
+  AddToCartPages.addToCartPages: (context) => const AddToCartPages(),
+  EmptyStatePages.emptyStatePages: (context) => EmptyStatePages(),
 };
 
-String initialRoutes = AddToCartPages.addToCartPages;
+String initialRoutes = EmptyStatePages.emptyStatePages;

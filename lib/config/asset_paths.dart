@@ -26,6 +26,7 @@ class AssetPaths {
   static const String imagePost = "assets/images/post.png";
   static const String imageDetail = "assets/images/detail.png";
   static const String imageCart = "assets/images/cart.png";
+  static const String imageEmpty = "assets/images/empty.png";
 
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";
