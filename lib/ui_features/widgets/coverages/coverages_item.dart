@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class CoveragesItem extends StatelessWidget {
-  CoveragesItem({
+  const CoveragesItem({
     super.key,
     required this.data,
   });

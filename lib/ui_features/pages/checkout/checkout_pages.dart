@@ -1,112 +1,113 @@
 import 'package:flutter/material.dart';
 import '../../../config/config.dart';
-import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 import '../../../ui_features/widgets/button_primary.dart';
-import '../../../ui_features/widgets/cart/checkout_item.dart';
-import '../../../ui_features/widgets/text_button.dart';
-
-import '../../widgets/cart/descriotion_one_row.dart';
+import '../../widgets/checkout/list_checkout.dart';
 
 class CheckoutPages extends StatelessWidget {
   const CheckoutPages({super.key});
+
   static const String checkoutPages = "checkoutPages";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarPrimary(),
-      body: Container(
-        padding: const EdgeInsets.only(left: 20, bottom: 20, right: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Review Purchase",
-                      style: AssetStyles.h1,
-                    ),
-                    verticalSpace(
-                      30,
-                    ),
-                    CheckOutItem(
-                      onTap: () {},
-                      title: "Title",
-                      subTitle: "Caption",
-                    ),
-                    verticalSpace(
-                      30,
-                    ),
-                    CheckOutItem(
-                      onTap: () {},
-                      title: "Title",
-                      subTitle: "Caption",
-                    ),
-                    verticalSpace(30),
-                    const Divider(
-                      thickness: 1,
-                    ),
-                    verticalSpace(
-                      25,
-                    ),
-                    TextButtonCustom(text: "Have a gift code?", onTap: () {}),
-                    verticalSpace(
-                      25,
-                    ),
-                    const Divider(
-                      thickness: 1,
-                    ),
-                    verticalSpace(
-                      25,
-                    ),
-                    DescriptionOneRow(
-                      left: "Subtotal",
-                      right: "\$97.00",
-                    ),
-                    verticalSpace(20),
-                    DescriptionOneRow(
-                      left: "Shipping & Handling",
-                      right: "\$19.99",
-                    ),
-                    verticalSpace(20),
-                    DescriptionOneRow(
-                      left: "Tax",
-                      right: "\$4.00",
-                    ),
-                    verticalSpace(20),
-                    DescriptionOneRow(
-                      left: "Total",
-                      right: "\$120.00",
-                      isBold: true,
-                      fontSize: 18,
-                    ),
-                  ],
-                ),
-              ),
+      body: Stack(
+        children: [
+          SizedBox(
+            height: screenHeight(context) * 0.35,
+            width: screenWidth(context),
+            child: const Image(
+              image: AssetImage(AssetPaths.imageCheckout),
+              fit: BoxFit.cover,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: screenHeight(context) * 0.3),
+            width: screenWidth(context),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
               children: [
-                const Text(
-                  "By clicking “Purchase”, you accept the",
-                  style: AssetStyles.labelMdSmReg1,
+                Expanded(
+                  child: Column(
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          SizedBox(
+                            width: screenWidth(context) * 0.3,
+                            height: screenHeight(context) * 0.2,
+                            child: const Image(
+                              image: AssetImage(AssetPaths.imageCheckout),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          horizontalSpace(20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Obvilion",
+                                style: AssetStyles.h2,
+                              ),
+                              verticalSpace(15),
+                              const Text(
+                                "Wed, 20 Jan - 10:00 AM",
+                                style: AssetStyles.h2i,
+                              ),
+                              verticalSpace(5),
+                              Text(
+                                "CMX Cinemas, New York",
+                                style: AssetStyles.labelMdSmReg1.copyWith(
+                                  color: AssetColors.textGrey,
+                                ),
+                              ),
+                              verticalSpace(20),
+                            ],
+                          ),
+                        ],
+                      ),
+                      verticalSpace(50),
+                      ListCheckout(
+                        leftText: "Movie ticket",
+                        rightText: "\$22.00",
+                      ),
+                      verticalSpace(20),
+                      ListCheckout(
+                        leftText: "Qty",
+                        rightText: "2",
+                      ),
+                      verticalSpace(20),
+                      ListCheckout(
+                        leftText: "Convenience fees",
+                        rightText: "\$1.00",
+                      ),
+                      verticalSpace(20),
+                      ListCheckout(
+                        leftText: "Subtotal",
+                        rightText: "\$43.00",
+                      ),
+                      verticalSpace(10),
+                      const Divider(
+                        thickness: 2,
+                      ),
+                      verticalSpace(10),
+                      ListCheckout(
+                        leftText: "Total amount",
+                        rightText: "\$43.00",
+                      ),
+                    ],
+                  ),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text("terms."),
+                ButtonPrimary(
+                  onTap: () {},
+                  text: "Pay . \$ 43.00",
+                  height: 50,
                 ),
+                verticalSpace(20),
               ],
             ),
-            ButtonPrimary(
-              height: 40,
-              onTap: () {},
-              text: "Purchase",
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
