@@ -6,11 +6,13 @@ class ButtonSetiingItem extends StatelessWidget {
   String icon;
   String text;
   Function()? onTap;
+  Widget? prefixIcon;
   ButtonSetiingItem({
     super.key,
     required this.icon,
     required this.text,
     this.onTap,
+    this.prefixIcon,
   });
 
   @override
@@ -27,12 +29,15 @@ class ButtonSetiingItem extends StatelessWidget {
               child: SvgPicture.asset(icon),
             ),
             horizontalSpace(20),
-            Text(
-              text,
-              style: AssetStyles.labelMdMdReg.copyWith(
-                color: AssetColors.inkDarkest,
+            Expanded(
+              child: Text(
+                text,
+                style: AssetStyles.labelMdMdReg.copyWith(
+                  color: AssetColors.inkDarkest,
+                ),
               ),
             ),
+            prefixIcon!,
           ],
         ),
       ),

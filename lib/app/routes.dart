@@ -56,9 +56,9 @@ Map<String, Widget Function(BuildContext)> routes = {
   ReviewPurchasePages.reviewPurchasePages: (context) =>
       const ReviewPurchasePages(),
   CheckoutPages.checkoutPages: (context) => const CheckoutPages(),
-  MainSettingPages.mainSettingPages: (context) => MainSettingPages(),
+  MainSettingPages.mainSettingPages: (context) => const MainSettingPages(),
   AccountSettingPages.accountSettingPages: (context) => AccountSettingPages(),
   ViewProfilePages.viewProfilePages: (context) => ViewProfilePages(),
 };
 
-String initialRoutes = MainSettingPages.mainSettingPages;
+String initialRoutes = AccountSettingPages.accountSettingPages;

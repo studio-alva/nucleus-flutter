@@ -72,6 +72,7 @@ class MainSettingPages extends StatelessWidget {
                       ButtonSetiingItem(
                         icon: AssetPaths.iconPlace,
                         text: "Address",
+                        prefixIcon: Container(),
                         onTap: () {
                           print("Hello Address");
                         },
@@ -80,17 +81,20 @@ class MainSettingPages extends StatelessWidget {
                       ButtonSetiingItem(
                         icon: AssetPaths.iconPayment,
                         text: "Payment Method",
+                        prefixIcon: Container(),
                         onTap: () {},
                       ),
                       verticalSpace(10),
                       ButtonSetiingItem(
                         icon: AssetPaths.iconHelp,
+                        prefixIcon: Container(),
                         text: "Help",
                         onTap: () {},
                       ),
                       verticalSpace(10),
                       ButtonSetiingItem(
                         icon: AssetPaths.iconSettings,
+                        prefixIcon: Container(),
                         text: "Settings",
                         onTap: () {},
                       ),

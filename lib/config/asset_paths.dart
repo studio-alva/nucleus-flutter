@@ -35,6 +35,7 @@ class AssetPaths {
   static const String iconIdn = "assets/icons/idn.png";
 
   static const String iconBack = "assets/icons/ic_arrow_back.svg";
+  static const String iconNext = "assets/icons/ic_arrow_next.svg";
   static const String iconDown = "assets/icons/ic_arrow_down.svg";
   static const String iconUp = "assets/icons/ic_arrow_up.svg";
   static const String iconSearch = "assets/icons/ic_search.svg";
@@ -49,4 +50,8 @@ class AssetPaths {
   static const String iconRating = "assets/icons/ic_rating.svg";
   static const String iconPayment = "assets/icons/ic_payment.svg";
   static const String iconHelp = "assets/icons/ic_help.svg";
+  static const String iconNotif = "assets/icons/ic_notifications.svg";
+  static const String iconRate = "assets/icons/ic_rate.svg";
+  static const String iconLock = "assets/icons/ic_lock.svg";
+  static const String iconAvatar = "assets/icons/ic_avatar.svg";
 }
