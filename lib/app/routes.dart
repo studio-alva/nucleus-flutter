@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/ui_features/pages/checkout/checkout_pages.dart';
-import 'package:nucleus_ui_app/ui_features/pages/settings/account_setting_pages.dart';
-import 'package:nucleus_ui_app/ui_features/pages/settings/main_setting_pages.dart';
-import 'package:nucleus_ui_app/ui_features/pages/settings/view_profile_pages.dart';
+import '../ui_features/pages/checkout/checkout_pages.dart';
+import '../ui_features/pages/settings/account_setting_pages.dart';
+import '../ui_features/pages/settings/main_setting_pages.dart';
+import '../ui_features/pages/settings/view_profile_pages.dart';
 import '../ui_features/pages/checkout/review_purchase_pages.dart';
 import '../ui_features/pages/filter/filter_pages.dart';
 import '../ui_features/pages/bottom_sheet/add_to_cart_pages.dart';
@@ -26,6 +26,10 @@ import '../ui_features/pages/search/search_pages.dart';
 import '../ui_features/pages/search/search_result.dart';
 import '../ui_features/pages/empty_state/empty_state_pages.dart';
 import '../ui_features/pages/map/map_pages.dart';
+import '../ui_features/pages/modal/confirmation_modal_pages.dart';
+import '../ui_features/pages/modal/filter_modal_pages.dart';
+import '../ui_features/pages/modal/info_modal_pages.dart';
+import '../ui_features/pages/modal/sort_modal_pages.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   GetStartedPages.launshScreen: (context) => const GetStartedPages(),
@@ -57,8 +61,14 @@ Map<String, Widget Function(BuildContext)> routes = {
       const ReviewPurchasePages(),
   CheckoutPages.checkoutPages: (context) => const CheckoutPages(),
   MainSettingPages.mainSettingPages: (context) => const MainSettingPages(),
-  AccountSettingPages.accountSettingPages: (context) => AccountSettingPages(),
-  ViewProfilePages.viewProfilePages: (context) => ViewProfilePages(),
+  AccountSettingPages.accountSettingPages: (context) =>
+      const AccountSettingPages(),
+  ViewProfilePages.viewProfilePages: (context) => const ViewProfilePages(),
+  InfoModalPages.infoModalPages: (context) => InfoModalPages(),
+  ConfirmationModalPages.confirmationModalPages: (context) =>
+      ConfirmationModalPages(),
+  SortModalPages.sortModalPages: (context) => SortModalPages(),
+  FilterModalPages.filterModalPages: (context) => FilterModalPages(),
 };
 
-String initialRoutes = ViewProfilePages.viewProfilePages;
+String initialRoutes = InfoModalPages.infoModalPages;

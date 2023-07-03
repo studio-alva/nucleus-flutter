@@ -28,12 +28,10 @@ class OnBoardingFirstPage extends StatelessWidget {
               ),
             ],
           ),
-          Expanded(
-            child: Container(
-              child: const Image(
-                image: AssetImage(AssetPaths.imageOnFirst1),
-                fit: BoxFit.contain,
-              ),
+          const Expanded(
+            child: Image(
+              image: AssetImage(AssetPaths.imageOnFirst1),
+              fit: BoxFit.contain,
             ),
           ),
           Container(

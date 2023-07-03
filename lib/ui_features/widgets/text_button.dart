@@ -7,12 +7,14 @@ class TextButtonCustom extends StatelessWidget {
   final Function() onTap;
   BoxDecoration? decoration;
   EdgeInsetsGeometry? padding;
+  TextStyle? style = AssetStyles.labelButtonSecondary;
   TextButtonCustom({
     super.key,
     required this.text,
     required this.onTap,
     this.decoration,
     this.padding,
+    this.style,
   });
 
   @override
@@ -24,7 +26,7 @@ class TextButtonCustom extends StatelessWidget {
         decoration: decoration,
         child: Text(
           text,
-          style: AssetStyles.labelButtonSecondary,
+          style: style,
         ),
       ),
     );

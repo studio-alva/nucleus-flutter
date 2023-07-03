@@ -31,6 +31,7 @@ class AssetPaths {
   static const String imageHotel1 = "assets/images/hotel1.jpg";
   static const String imageHotel2 = "assets/images/hotel2.jpg";
   static const String imageCheckout = "assets/images/bgcheckout.png";
+  static const String imageModel = "assets/images/imgModel.png";
 
   static const String iconIdn = "assets/icons/idn.png";
 
