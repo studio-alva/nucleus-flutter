@@ -71,4 +71,4 @@ Map<String, Widget Function(BuildContext)> routes = {
   FilterModalPages.filterModalPages: (context) => FilterModalPages(),
 };
 
-String initialRoutes = ConfirmationModalPages.confirmationModalPages;
+String initialRoutes = SortModalPages.sortModalPages;
