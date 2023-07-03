@@ -3,6 +3,12 @@ import '../config/asset_colors.dart';
 
 class AssetStyles {
   /* Heading Style */
+  static const TextStyle h1Utama = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 48,
+    fontWeight: FontWeight.w700,
+    color: AssetColors.inkDarkest,
+  );
   static const TextStyle h1 = TextStyle(
     fontFamily: 'Inter',
     fontSize: 32,
