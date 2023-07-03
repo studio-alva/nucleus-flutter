@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui_features/pages/product/product_detail_pages.dart';
 import '../ui_features/pages/home/chat_pages.dart';
 import '../ui_features/pages/subscription/subscription_pages.dart';
 import '../ui_features/pages/video_call/video_call_pages.dart';
@@ -74,7 +75,9 @@ Map<String, Widget Function(BuildContext)> routes = {
   FilterModalPages.filterModalPages: (context) => FilterModalPages(),
   ChatPages.chatPages: (context) => ChatPages(),
   VideoCallPages.videoCallPages: (context) => const VideoCallPages(),
-  SubScriptionPages.subscriptionPages: (context) => SubScriptionPages(),
+  SubScriptionPages.subscriptionPages: (context) => const SubScriptionPages(),
+  ProductDetailPages.productDetailPages: (context) =>
+      const ProductDetailPages(),
 };
 
-String initialRoutes = SubScriptionPages.subscriptionPages;
+String initialRoutes = ProductDetailPages.productDetailPages;

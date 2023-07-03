@@ -46,9 +46,11 @@ class SubScriptionPages extends StatelessWidget {
             verticalSpace(20),
             CarouselSlider(
               options: CarouselOptions(
-                  disableCenter: true,
-                  enlargeCenterPage: true,
-                  aspectRatio: 1.4),
+                disableCenter: true,
+                enlargeCenterPage: true,
+                aspectRatio: 1.4,
+                enableInfiniteScroll: false,
+              ),
               items: [
                 Container(
                   padding: const EdgeInsets.all(20),
