@@ -83,7 +83,7 @@ class ModalSortBody extends StatelessWidget {
                         ),
                       ),
                       sm[index].status
-                          ? SvgPicture.asset(AssetPaths.iconDown)
+                          ? SvgPicture.asset(AssetPaths.iconCheck)
                           : Container(),
                     ],
                   ),

@@ -55,4 +55,5 @@ class AssetPaths {
   static const String iconRate = "assets/icons/ic_rate.svg";
   static const String iconLock = "assets/icons/ic_lock.svg";
   static const String iconAvatar = "assets/icons/ic_avatar.svg";
+  static const String iconCheck = "assets/icons/ic_check.svg";
 }
