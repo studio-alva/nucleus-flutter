@@ -32,6 +32,8 @@ class AssetPaths {
   static const String imageHotel2 = "assets/images/hotel2.jpg";
   static const String imageCheckout = "assets/images/bgcheckout.png";
   static const String imageModel = "assets/images/imgModel.png";
+  static const String imageVidBig = "assets/images/bg_vid_big.png";
+  static const String imageMVidSm = "assets/images/bg_vid_sm.png";
 
   static const String iconIdn = "assets/icons/idn.png";
 
@@ -57,4 +59,7 @@ class AssetPaths {
   static const String iconAvatar = "assets/icons/ic_avatar.svg";
   static const String iconCheck = "assets/icons/ic_check.svg";
   static const String iconAddFriend = "assets/icons/ic_add_friend.svg";
+  static const String iconVideo = "assets/icons/ic_video.svg";
+  static const String iconCall = "assets/icons/ic_call.svg";
+  static const String iconVoice1 = "assets/icons/ic_voice_1.svg";
 }

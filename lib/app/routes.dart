@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nucleus_ui_app/ui_features/pages/home/chat_pages.dart';
+import 'package:nucleus_ui_app/ui_features/pages/video_call/video_call_pages.dart';
 import '../ui_features/pages/checkout/checkout_pages.dart';
 import '../ui_features/pages/settings/account_setting_pages.dart';
 import '../ui_features/pages/settings/main_setting_pages.dart';
@@ -31,7 +32,6 @@ import '../ui_features/pages/modal/confirmation_modal_pages.dart';
 import '../ui_features/pages/modal/filter_modal_pages.dart';
 import '../ui_features/pages/modal/info_modal_pages.dart';
 import '../ui_features/pages/modal/sort_modal_pages.dart';
-import '../ui_features/pages/home/chat_pages.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   GetStartedPages.launshScreen: (context) => const GetStartedPages(),
@@ -72,6 +72,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   SortModalPages.sortModalPages: (context) => SortModalPages(),
   FilterModalPages.filterModalPages: (context) => FilterModalPages(),
   ChatPages.chatPages: (context) => ChatPages(),
+  VideoCallPages.videoCallPages: (context) => VideoCallPages(),
 };
 
-String initialRoutes = ChatPages.chatPages;
+String initialRoutes = VideoCallPages.videoCallPages;
