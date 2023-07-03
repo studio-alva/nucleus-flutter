@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+
+import '../../../config/config.dart';
+import '../../model/chat_model.dart';
+
+class ChatSenderItem extends StatelessWidget {
+  ChatSenderItem({
+    super.key,
+    required this.data,
+  });
+
+  ChatModel data;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        children: [
+          const CircleAvatar(
+            backgroundImage: AssetImage(
+              AssetPaths.imageAvatar1,
+            ),
+          ),
+          horizontalSpace(10),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 15,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.blue,
+            ),
+            child: Text(
+              data.message,
+              style: AssetStyles.labelMdMdReg.copyWith(
+                color: AssetColors.skyWhite,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
