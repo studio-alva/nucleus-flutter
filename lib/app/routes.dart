@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nucleus_ui_app/ui_features/pages/menu_pages.dart';
 import '../ui_features/pages/product/product_detail_pages.dart';
 import '../ui_features/pages/home/chat_pages.dart';
 import '../ui_features/pages/subscription/subscription_pages.dart';
@@ -78,6 +79,45 @@ Map<String, Widget Function(BuildContext)> routes = {
   SubScriptionPages.subscriptionPages: (context) => const SubScriptionPages(),
   ProductDetailPages.productDetailPages: (context) =>
       const ProductDetailPages(),
+  MenuHome.menuPagesAll: (context) => MenuHome(),
 };
 
-String initialRoutes = ProductDetailPages.productDetailPages;
+String initialRoutes = MenuHome.menuPagesAll;
+
+final List<String> halaman = [
+  GetStartedPages.launshScreen,
+  OnboardingPages.onBoardingPages,
+  SigninPagesByEmail.signEmail,
+  SignInPagesByNumber.signInNumber,
+  VerificationPages.verificationPages,
+  PersonalizationFirstPage.personalizationFirstPage,
+  PersonalizationSeconPages.personalizationSecondPage,
+  ChooseLocationPages.locationPages,
+  HomeAllItemsPages.homeAllItemsPages,
+  MainHomePages.mainHomePages,
+  InboxPages1.inboxPages,
+  HomePages1.homePages,
+  DiscoverExplorePages.discoverPages,
+  ContentDetailPages.contentDetail,
+  HighLightsPages.highlightsPages,
+  ContentDetailPostPages.contentPostDetail,
+  SearchPages.searchPages,
+  SearchResultPgaes.searchResult,
+  AddToCartPages.addToCartPages,
+  EmptyStatePages.emptyStatePages,
+  MapPages.mapPages,
+  FilterPages.filterPages,
+  ReviewPurchasePages.reviewPurchasePages,
+  CheckoutPages.checkoutPages,
+  MainSettingPages.mainSettingPages,
+  AccountSettingPages.accountSettingPages,
+  ViewProfilePages.viewProfilePages,
+  InfoModalPages.infoModalPages,
+  ConfirmationModalPages.confirmationModalPages,
+  SortModalPages.sortModalPages,
+  FilterModalPages.filterModalPages,
+  ChatPages.chatPages,
+  VideoCallPages.videoCallPages,
+  SubScriptionPages.subscriptionPages,
+  ProductDetailPages.productDetailPages,
+];
