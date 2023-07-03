@@ -61,4 +61,4 @@ Map<String, Widget Function(BuildContext)> routes = {
   ViewProfilePages.viewProfilePages: (context) => ViewProfilePages(),
 };
 
-String initialRoutes = AccountSettingPages.accountSettingPages;
+String initialRoutes = ViewProfilePages.viewProfilePages;
