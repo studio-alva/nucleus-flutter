@@ -64,11 +64,11 @@ Map<String, Widget Function(BuildContext)> routes = {
   AccountSettingPages.accountSettingPages: (context) =>
       const AccountSettingPages(),
   ViewProfilePages.viewProfilePages: (context) => const ViewProfilePages(),
-  InfoModalPages.infoModalPages: (context) => InfoModalPages(),
+  InfoModalPages.infoModalPages: (context) => const InfoModalPages(),
   ConfirmationModalPages.confirmationModalPages: (context) =>
-      ConfirmationModalPages(),
+      const ConfirmationModalPages(),
   SortModalPages.sortModalPages: (context) => SortModalPages(),
   FilterModalPages.filterModalPages: (context) => FilterModalPages(),
 };
 
-String initialRoutes = InfoModalPages.infoModalPages;
+String initialRoutes = ConfirmationModalPages.confirmationModalPages;
