@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/asset_colors.dart';
+import '../../../config/asset_colors.dart';
 
 class InputVerification extends StatelessWidget {
-  bool? isActive;
-  EdgeInsetsGeometry? edgeInsetsGeometry;
-  TextEditingController? controller;
+  final bool? isActive;
+  final EdgeInsetsGeometry? edgeInsetsGeometry;
+  final TextEditingController? controller;
 
-  InputVerification({
+  const InputVerification({
     super.key,
     this.isActive = false,
     this.edgeInsetsGeometry,
@@ -26,10 +26,13 @@ class InputVerification extends StatelessWidget {
         ),
       ),
       child: TextField(
+        keyboardType: TextInputType.number,
+        maxLength: 1,
         controller: controller,
         textAlign: TextAlign.center,
         decoration: const InputDecoration(
           border: InputBorder.none,
+          counterText: "",
         ),
       ),
     );

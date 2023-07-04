@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_primary.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/button_primary.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/text_button.dart';
-
+import '../../../config/config.dart';
+import '../../../ui_features/widgets/appbar/appbar_primary.dart';
+import '../../../ui_features/widgets/button_primary.dart';
+import '../../../ui_features/widgets/text_button.dart';
 import '../../widgets/input/input_rounded.dart';
 
 class VerificationPages extends StatelessWidget {
@@ -34,11 +33,13 @@ class VerificationPages extends StatelessWidget {
     return Scaffold(
       appBar: AppBarPrimary(
         actions: [
-          TextButton(
-            onPressed: () {},
-            child: const Text("Change Number"),
+          Container(
+            margin: const EdgeInsets.only(top: 20, right: 20),
+            child: TextButtonCustom(
+              text: "Change Number",
+              onTap: () {},
+            ),
           ),
-          horizontalSpace(10),
         ],
       ),
       body: Container(
@@ -52,22 +53,32 @@ class VerificationPages extends StatelessWidget {
                 children: [
                   const Text(
                     "Enter authentication code",
-                    style: AssetStyles.h2,
+                    style: AssetStyles.t3,
                   ),
                   verticalSpace(10),
-                  Text(
-                    "Enter the 4-digit that we have sent via the phone number +62 813-8172-5977",
-                    style: AssetStyles.h3.copyWith(
-                      fontWeight: FontWeight.normal,
-                    ),
+                  RichText(
                     textAlign: TextAlign.center,
+                    text: TextSpan(
+                      children: [
+                        const TextSpan(
+                          text:
+                              "Enter the 4-digit that we have sent via the phone number ",
+                          style: AssetStyles.labelMdRegular,
+                        ),
+                        TextSpan(
+                          text: "+62 813-8172-5977",
+                          style: AssetStyles.labelMdRegular.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   verticalSpace(30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [0, 1, 2, 3].map((e) {
                       controller[e].text = e.toString();
-
                       return InputVerification(
                         edgeInsetsGeometry: const EdgeInsets.symmetric(
                           horizontal: 10,
@@ -81,9 +92,14 @@ class VerificationPages extends StatelessWidget {
               ),
             ),
             ButtonPrimary(
-              height: 50,
-              onTap: () {},
+              width: screenWidth(context) * 0.8,
               text: "Continue",
+              color: AssetColors.skyLight,
+              style: AssetStyles.labelMdRegular.copyWith(
+                color: AssetColors.skyDark,
+                fontWeight: FontWeight.w500,
+              ),
+              onTap: () {},
             ),
             verticalSpace(20),
             TextButtonCustom(

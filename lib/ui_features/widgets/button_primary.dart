@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import '../../config/config.dart';
 
@@ -10,6 +12,7 @@ class ButtonPrimary extends StatelessWidget {
   final Color? color;
   final Function() onTap;
   final double? radius;
+  final Bool? disable;
   EdgeInsetsGeometry? padding;
   ButtonPrimary({
     Key? key,
@@ -17,10 +20,11 @@ class ButtonPrimary extends StatelessWidget {
     this.width,
     required this.text,
     this.style,
-    this.color = AssetColors.primaryBase,
+    this.color,
     required this.onTap,
     this.radius = 30,
     this.padding,
+    this.disable,
   }) : super(key: key);
 
   @override
@@ -33,7 +37,7 @@ class ButtonPrimary extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(radius!),
-          color: color,
+          color: color ?? AssetColors.primaryBase,
         ),
         child: Center(
           child: Text(
