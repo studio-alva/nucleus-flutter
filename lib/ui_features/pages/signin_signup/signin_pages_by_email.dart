@@ -1,5 +1,5 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import '../../../config/config.dart';
 import '../../widgets/appbar/appbar_primary.dart';
 import '../../widgets/button_primary.dart';
@@ -14,9 +14,9 @@ class SigninPagesByEmail extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
+    email.text = "juinal.william@gmail.com";
     return Scaffold(
-      appBar: AppBarPrimary(
-        heightAppBar: 50,
+      appBar: const AppBarPrimary(
         text: "Log In",
       ),
       body: Container(
@@ -29,7 +29,6 @@ class SigninPagesByEmail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  verticalSpace(30),
                   InputCustom(
                     controller: email,
                     label: const Text("Email"),
@@ -51,20 +50,47 @@ class SigninPagesByEmail extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              children: [],
-            ),
-            const Text(
-              "By continuing, you agree to our Terms of Service and Privacy Policy.",
-              style: AssetStyles.labelMdSmReg,
+            RichText(
+              text: TextSpan(
+                children: [
+                  const TextSpan(
+                    text: "By continuing, you agree to our ",
+                    style: AssetStyles.labelTinyReguler,
+                  ),
+                  TextSpan(
+                    text: "Terms of Service ",
+                    style: AssetStyles.labelTinyReguler.copyWith(
+                      color: AssetColors.primaryBase,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        print("Term Of Service");
+                      },
+                  ),
+                  const TextSpan(
+                    text: "and ",
+                    style: AssetStyles.labelTinyReguler,
+                  ),
+                  TextSpan(
+                    text: "and Privacy Policy.",
+                    style: AssetStyles.labelTinyReguler.copyWith(
+                      color: AssetColors.primaryBase,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        print("Pripacy Policy");
+                      },
+                  ),
+                ],
+              ),
             ),
             verticalSpace(20),
             ButtonPrimary(
-              onTap: () {},
-              height: 50,
+              width: screenWidth(context) * 0.9,
               text: "Log In",
+              onTap: () {},
             ),
-            verticalSpace(20),
+            verticalSpace(30),
           ],
         ),
       ),

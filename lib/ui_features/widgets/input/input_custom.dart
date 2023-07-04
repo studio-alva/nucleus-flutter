@@ -11,6 +11,7 @@ class InputCustom extends StatelessWidget {
   final bool obsecure;
   final FocusNode? focusNode;
   final EdgeInsetsGeometry? contentPadding;
+  final TextStyle? textStyle;
 
   const InputCustom({
     super.key,
@@ -23,6 +24,7 @@ class InputCustom extends StatelessWidget {
     this.focusNode,
     this.contentPadding,
     this.suffixIcon,
+    this.textStyle,
   });
 
   @override
@@ -40,9 +42,10 @@ class InputCustom extends StatelessWidget {
         label: label,
         contentPadding: contentPadding,
       ),
-      style: AssetStyles.labelMdRegular.copyWith(
-        color: AssetColors.inkLighter,
-      ),
+      style: textStyle ??
+          AssetStyles.labelMdRegular.copyWith(
+            color: AssetColors.inkDarkest,
+          ),
       keyboardType: inputType,
       obscureText: obsecure,
     );

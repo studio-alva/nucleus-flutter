@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nucleus_ui_app/config/asset_colors.dart';
 import 'package:nucleus_ui_app/config/asset_styles.dart';
 
 const fontFamily = 'Inter';

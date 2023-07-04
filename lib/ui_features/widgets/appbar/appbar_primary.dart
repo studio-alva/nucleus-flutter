@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/config/asset_colors.dart';
-import 'package:nucleus_ui_app/config/asset_paths.dart';
+import '../../../config/config.dart';
 
 class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
   final Color? backgroundColor;
@@ -13,12 +11,9 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
   final double? elevation;
   final List<Widget>? actions;
   final Function()? onTapBack;
-  TextStyle? textStyle = AssetStyles.h3.copyWith(
-    fontWeight: FontWeight.w500,
-    color: AssetColors.inkDarkest,
-  );
-  Color? iconColor = AssetColors.inkDarkest;
-  AppBarPrimary({
+  final TextStyle? textStyle;
+  final Color? iconColor;
+  const AppBarPrimary({
     super.key,
     this.backgroundColor,
     this.heightAppBar,
@@ -39,7 +34,10 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       title: Text(
         text ?? "",
-        style: textStyle,
+        style: textStyle ??
+            AssetStyles.labelLgRegular.copyWith(
+              fontWeight: FontWeight.w500,
+            ),
       ),
       backgroundColor: backgroundColor ?? Colors.transparent,
       bottomOpacity: 0.0,
@@ -57,7 +55,7 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
                 },
                 icon: SvgPicture.asset(
                   AssetPaths.iconBack,
-                  color: iconColor,
+                  color: iconColor ?? AssetColors.inkDarkest,
                 ),
               )
           : null,
