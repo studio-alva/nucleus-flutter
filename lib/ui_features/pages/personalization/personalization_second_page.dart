@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/pages/personalization/step/step_first.dart';
-import 'package:nucleus_ui_app/ui_features/pages/personalization/step/step_second.dart';
-
-import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_primary.dart';
+import '../../../config/config.dart';
+import '../../../ui_features/pages/personalization/step/step_first.dart';
+import '../../../ui_features/pages/personalization/step/step_second.dart';
+import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 
 class PersonalizationSeconPages extends StatefulWidget {
   static const String personalizationSecondPage = "personalizationSecondPage";
@@ -27,7 +26,7 @@ class _PersonalizationSeconPagesState extends State<PersonalizationSeconPages>
 
     currenStep = 1;
     stepWidget = [
-      const StepFirstPerson(),
+      StepFirstPerson(),
       StepTwoPerson(),
     ];
 
@@ -37,14 +36,18 @@ class _PersonalizationSeconPagesState extends State<PersonalizationSeconPages>
 
   @override
   Widget build(BuildContext context) {
-    _tabController.addListener(() {
-      setState(() {
-        currenStep = _tabController.index + 1;
-      });
-    });
+    _tabController.addListener(
+      () {
+        setState(
+          () {
+            currenStep = _tabController.index + 1;
+          },
+        );
+      },
+    );
 
     return Scaffold(
-      appBar: AppBarPrimary(),
+      appBar: const AppBarPrimary(),
       body: SafeArea(
         child: Container(
           margin: const EdgeInsets.fromLTRB(30, 0, 30, 30),
@@ -69,7 +72,7 @@ class _PersonalizationSeconPagesState extends State<PersonalizationSeconPages>
                         height: 5,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: AssetColors.primaryColor,
+                          color: AssetColors.primaryBase,
                         ),
                       ),
                     ],

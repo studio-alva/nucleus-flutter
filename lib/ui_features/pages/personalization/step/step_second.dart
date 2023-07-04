@@ -1,47 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/button_primary.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/input/input_custom.dart';
-
+import '../../../../ui_features/widgets/button_primary.dart';
+import '../../../../ui_features/widgets/input/input_custom.dart';
 import '../../../../config/asset_styles.dart';
 import '../../../../config/ui_helper.dart';
 
 class StepTwoPerson extends StatelessWidget {
-  TextEditingController controllerEmail = TextEditingController();
-  StepTwoPerson({super.key});
+  const StepTwoPerson({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Column(
-              children: [
-                verticalSpace(40),
-                const Text(
-                  "What’s your email address?",
-                  style: AssetStyles.h2,
+    TextEditingController controllerEmail = TextEditingController();
+    controllerEmail.text = "juinal.william@gmail.com";
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              verticalSpace(40),
+              Text(
+                "What’s your email address?",
+                style: AssetStyles.labelLgRegular.copyWith(
+                  fontWeight: FontWeight.bold,
                 ),
-                verticalSpace(20),
-                InputCustom(
-                  controller: controllerEmail,
-                  inputType: TextInputType.emailAddress,
-                  hintText: "input email address",
-                  label: const Text("Email"),
-                ),
-                verticalSpace(50),
-              ],
-            ),
+              ),
+              verticalSpace(20),
+              InputCustom(
+                controller: controllerEmail,
+                inputType: TextInputType.emailAddress,
+                hintText: "input email address",
+                label: const Text("Email"),
+              ),
+              verticalSpace(50),
+            ],
           ),
-          ButtonPrimary(
-            onTap: () {},
-            text: "Continue",
-            height: 50,
-          ),
-        ],
-      ),
+        ),
+        ButtonPrimary(
+          width: screenHeight(context) * 0.9,
+          onTap: () {},
+          text: "Continue",
+        ),
+      ],
     );
   }
 }
