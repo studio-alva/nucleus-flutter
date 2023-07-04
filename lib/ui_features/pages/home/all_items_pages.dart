@@ -1,10 +1,10 @@
+import 'dart:math';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_primary.dart';
-import 'dart:math';
-
+import '../../../config/config.dart';
+import '../../../ui_features/model/items_model.dart';
+import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 import '../../widgets/home/item_home.dart';
 
 class HomeAllItemsPages extends StatelessWidget {
@@ -13,19 +13,18 @@ class HomeAllItemsPages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var faker = Faker();
-    List<Map<String, String>> data = List.generate(
+    final faker = Faker();
+    final List<ItemModel> data = List.generate(
       30,
-      (index) => {
-        "images": "https://picsum.photos/id/${Random().nextInt(100)}/200/300",
-        "name": faker.company.name(),
-      },
+      (index) => ItemModel(
+        images: "https://picsum.photos/id/${Random().nextInt(100)}/200/300",
+        name: faker.company.name(),
+      ),
     );
 
     return Scaffold(
       appBar: AppBarPrimary(
         text: "All Items",
-        heightAppBar: 50,
         actions: [
           IconButton(
             onPressed: () {},
@@ -40,7 +39,7 @@ class HomeAllItemsPages extends StatelessWidget {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
-          itemBuilder: (context, index) => HomeItem(data: data[index]),
+          itemBuilder: (context, index) => HomeItem(item: data[index]),
         ),
       ),
     );

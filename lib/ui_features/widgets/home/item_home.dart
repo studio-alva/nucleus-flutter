@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../../config/asset_colors.dart';
-import '../../../config/asset_paths.dart';
+import '../../../ui_features/model/items_model.dart';
+import '../../../config/config.dart';
 
 class HomeItem extends StatelessWidget {
-  HomeItem({
+  const HomeItem({
     super.key,
-    required this.data,
+    required this.item,
   });
 
-  late Map<String, String> data;
+  final ItemModel item;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +22,7 @@ class HomeItem extends StatelessWidget {
       ),
       margin: const EdgeInsets.all(6),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Container(
@@ -31,7 +31,7 @@ class HomeItem extends StatelessWidget {
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
                 image: DecorationImage(
-                  image: NetworkImage(data["images"]!),
+                  image: NetworkImage(item.images),
                   fit: BoxFit.cover,
                   onError: (exception, stackTrace) =>
                       SvgPicture.asset(AssetPaths.iconNoImages),
@@ -42,10 +42,11 @@ class HomeItem extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(5),
             child: Text(
-              data["name"]!,
+              item.name,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
+              style: AssetStyles.labelTinyReguler,
             ),
           ),
         ],
