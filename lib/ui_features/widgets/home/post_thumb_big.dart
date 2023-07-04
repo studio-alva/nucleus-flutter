@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nucleus_ui_app/ui_features/model/posts_model.dart';
 import '../../../config/config.dart';
 
 class PostThumbBig extends StatelessWidget {
-  Map<String, String> data = {};
-  PostThumbBig({
+  final Posts data;
+  const PostThumbBig({
     super.key,
     required this.data,
   });
@@ -25,8 +26,7 @@ class PostThumbBig extends StatelessWidget {
                   height: constraint.minHeight * 0.8,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image:
-                          AssetImage(data["images"] ?? AssetPaths.imageThumb1),
+                      image: AssetImage(data.imgThumb),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -34,20 +34,21 @@ class PostThumbBig extends StatelessWidget {
               },
             ),
           ),
-          Container(
-            child: Text(
-              data["title"]!,
-              style: AssetStyles.h3.copyWith(height: 2),
-              maxLines: 2,
+          Text(
+            data.title,
+            style: AssetStyles.labelMdRegular.copyWith(
+              fontWeight: FontWeight.w700,
+              height: 2,
             ),
+            maxLines: 2,
           ),
           verticalSpace(10),
-          Container(
-            child: Text(
-              data["author"]!,
-              style: AssetStyles.labelMdMdReg,
-              maxLines: 2,
+          Text(
+            "${data.time} · by ${data.authors}",
+            style: AssetStyles.labelTinyReguler.copyWith(
+              color: AssetColors.inkLight,
             ),
+            maxLines: 2,
           ),
         ],
       ),

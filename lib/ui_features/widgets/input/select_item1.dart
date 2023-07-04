@@ -12,6 +12,7 @@ class SelectItem1 extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final Function()? onTap;
   final bool? isActive;
+  final Color? bgSecond;
   const SelectItem1({
     super.key,
     this.border = false,
@@ -22,6 +23,7 @@ class SelectItem1 extends StatelessWidget {
     this.margin,
     this.onTap,
     this.isActive,
+    this.bgSecond,
   });
 
   @override
@@ -32,7 +34,9 @@ class SelectItem1 extends StatelessWidget {
             padding ?? const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
         margin: margin ?? const EdgeInsets.only(bottom: 20),
         decoration: BoxDecoration(
-          color: isActive! ? AssetColors.primaryLightest : AssetColors.skyWhite,
+          color: isActive!
+              ? AssetColors.primaryLightest
+              : bgSecond ?? AssetColors.skyWhite,
           borderRadius: BorderRadius.circular(30),
           border: isActive!
               ? const Border.symmetric()

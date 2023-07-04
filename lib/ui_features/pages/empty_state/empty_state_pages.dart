@@ -53,7 +53,7 @@ class EmptyStatePages extends StatelessWidget {
               ),
             ),
           ),
-          NavBarCustom1(),
+          // NavBarCustom1(),
         ],
       ),
     );

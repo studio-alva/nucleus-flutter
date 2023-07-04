@@ -96,7 +96,7 @@ class ViewProfilePages extends StatelessWidget {
               ),
             ),
           ),
-          const NavBarCustom1(),
+          // const NavBarCustom1(),
         ],
       ),
     );

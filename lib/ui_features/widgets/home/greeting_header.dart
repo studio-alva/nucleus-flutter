@@ -18,12 +18,12 @@ class GreetingHeader extends StatelessWidget {
               children: [
                 const Text(
                   "Good Morning",
-                  style: AssetStyles.h1,
+                  style: AssetStyles.t2,
                 ),
                 verticalSpace(5),
-                Text(
+                const Text(
                   "Monday, January 25, 2021",
-                  style: AssetStyles.h3.copyWith(fontWeight: FontWeight.normal),
+                  style: AssetStyles.labelMdRegular,
                 ),
               ],
             ),
@@ -35,9 +35,11 @@ class GreetingHeader extends StatelessWidget {
                 image: AssetImage(AssetPaths.imageMatahari),
               ),
               verticalSpace(10),
-              const Text(
+              Text(
                 "28\u2109",
-                style: AssetStyles.h3,
+                style: AssetStyles.labelMdRegular.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),

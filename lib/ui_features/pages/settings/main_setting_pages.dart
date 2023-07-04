@@ -116,7 +116,7 @@ class MainSettingPages extends StatelessWidget {
                   ),
                 ),
               ),
-              const NavBarCustom1(),
+              // const NavBarCustom1(),
             ],
           ),
         ),

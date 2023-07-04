@@ -81,7 +81,7 @@ class SearchPages extends StatelessWidget {
                   ),
                 ),
               ),
-              const NavBarCustom1(),
+              // const NavBarCustom1(),
             ],
           ),
         ),
