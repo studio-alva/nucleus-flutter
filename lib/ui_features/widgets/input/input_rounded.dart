@@ -22,7 +22,7 @@ class InputVerification extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: isActive! ? AssetColors.primaryColor : AssetColors.inkDarkest,
+          color: isActive! ? AssetColors.primaryBase : AssetColors.inkDarkest,
         ),
       ),
       child: TextField(
