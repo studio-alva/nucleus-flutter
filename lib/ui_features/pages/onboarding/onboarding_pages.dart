@@ -1,9 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/nav_services.dart';
-import 'package:nucleus_ui_app/ui_features/pages/signin_signup/signin_pages_by_number.dart';
+import '../../widgets/button_primary.dart';
 import '../../../config/config.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/button_primary.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/text_button.dart';
 
 class OnboardingPages extends StatefulWidget {
   static const String onBoardingPages = "onBoardingPages";
@@ -28,9 +26,11 @@ class _OnboardingPagesState extends State<OnboardingPages> {
           child: Column(
             children: [
               Expanded(
-                child: LayoutBuilder(builder: (ctx, constraints) {
-                  return OnBoardingFirstPage(constraints: constraints);
-                }),
+                child: LayoutBuilder(
+                  builder: (ctx, constraints) {
+                    return OnBoardingFirstPage(constraints: constraints);
+                  },
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -46,7 +46,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: (e == 5)
-                              ? AssetColors.primaryColor
+                              ? AssetColors.primaryBase
                               : AssetColors.skyLight,
                         ),
                       ),
@@ -54,14 +54,10 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                     .toList(),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               ButtonPrimary(
-                height: 50,
-                width: size.width * 0.8,
-                color: AssetColors.primaryColor,
-                text: "Get Started",
-                style: AssetStyles.labelButtonPrimary,
+                text: "Create Account",
                 onTap: () {
                   print("OK");
                 },
@@ -69,22 +65,30 @@ class _OnboardingPagesState extends State<OnboardingPages> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Have an account ? ",
-                    style: AssetStyles.labelButtonPrimary
-                        .copyWith(color: AssetColors.inkDarkest),
-                  ),
-                  TextButtonCustom(
-                    text: "Login",
-                    onTap: () {
-                      nextScreen(SignInPagesByNumber.signInNumber);
-                    },
-                  ),
-                ],
-              ),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Have an account?",
+                      style: AssetStyles.labelMdRegular.copyWith(
+                        color: AssetColors.inkDarker,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    TextSpan(
+                      text: " Log in",
+                      style: AssetStyles.labelMdRegular.copyWith(
+                        color: AssetColors.primaryBase,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          print("Login");
+                        },
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),

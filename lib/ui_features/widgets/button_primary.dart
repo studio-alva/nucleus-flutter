@@ -1,35 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/asset_colors.dart';
-import 'package:nucleus_ui_app/config/asset_styles.dart';
+import '../../config/config.dart';
 
+// ignore: must_be_immutable
 class ButtonPrimary extends StatelessWidget {
   double? height = 48;
   double? width = 48;
-  String text;
-  TextStyle? style;
-  Color? color;
-  Function() onTap;
-  double? radius;
+  final String text;
+  final TextStyle? style;
+  final Color? color;
+  final Function() onTap;
+  final double? radius;
   EdgeInsetsGeometry? padding;
   ButtonPrimary({
-    super.key,
-    required this.onTap,
-    required this.text,
+    Key? key,
     this.height,
     this.width,
-    this.style = AssetStyles.labelButtonPrimary,
-    this.color = AssetColors.primaryColor,
+    required this.text,
+    this.style,
+    this.color = AssetColors.primaryBase,
+    required this.onTap,
+    this.radius = 30,
     this.padding,
-    this.radius = 20,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: height,
-        width: width,
+        height: height ?? 50,
+        width: width ?? 170,
         padding: padding,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(radius!),
@@ -38,18 +38,14 @@ class ButtonPrimary extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: style,
+            style: style ??
+                AssetStyles.labelMdRegular.copyWith(
+                  color: AssetColors.skyWhite,
+                  fontWeight: FontWeight.w500,
+                ),
           ),
         ),
       ),
     );
   }
 }
-
-
-// return GestureDetector(
-//       onTap: () {
-//         print("Hello");
-//       },
-//       
-//     );

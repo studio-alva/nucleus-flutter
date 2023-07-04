@@ -102,7 +102,7 @@ class InboxPages1 extends StatelessWidget {
                 ),
                 ChatView(
                   data: data
-                      .where((element) => element["image"] == false)
+                      .where((element) => element["read"] == false)
                       .toList(),
                   read: false,
                 ),

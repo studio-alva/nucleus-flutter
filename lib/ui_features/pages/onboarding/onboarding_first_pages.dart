@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class OnBoardingFirstPage extends StatelessWidget {
-  BoxConstraints constraints;
-  OnBoardingFirstPage({super.key, required this.constraints});
+  final BoxConstraints constraints;
+  const OnBoardingFirstPage({super.key, required this.constraints});
 
   @override
   Widget build(BuildContext context) {
@@ -13,20 +13,21 @@ class OnBoardingFirstPage extends StatelessWidget {
       padding: const EdgeInsets.only(top: 40),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "you",
-                style: AssetStyles.h2,
-              ),
-              Text(
-                "learn",
-                style: AssetStyles.h2.copyWith(
-                  color: AssetColors.primaryColor,
+          RichText(
+            text: TextSpan(
+              children: [
+                const TextSpan(
+                  text: "you",
+                  style: AssetStyles.t3,
                 ),
-              ),
-            ],
+                TextSpan(
+                  text: "learn",
+                  style: AssetStyles.t3.copyWith(
+                    color: AssetColors.primaryBase,
+                  ),
+                ),
+              ],
+            ),
           ),
           const Expanded(
             child: Image(
@@ -34,12 +35,10 @@ class OnBoardingFirstPage extends StatelessWidget {
               fit: BoxFit.contain,
             ),
           ),
-          Container(
-            child: const Text(
-              "Create brilliant learning pathways",
-              style: AssetStyles.h2,
-              textAlign: TextAlign.center,
-            ),
+          const Text(
+            "Create brilliant learning pathways",
+            style: AssetStyles.t3,
+            textAlign: TextAlign.center,
           ),
           const SizedBox(
             height: 20,
