@@ -16,12 +16,12 @@ class FlagCountryNumber extends StatelessWidget {
         width: screenWidth(context) * 0.2,
         child: Row(
           children: [
-            Image(
+            const Image(
               image: AssetImage(AssetPaths.iconIdn),
               fit: BoxFit.cover,
             ),
             horizontalSpace(5),
-            Text("+62"),
+            const Text("+62"),
             horizontalSpace(5),
             SvgPicture.asset(AssetPaths.iconDown)
           ],

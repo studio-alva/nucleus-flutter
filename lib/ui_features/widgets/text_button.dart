@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/asset_styles.dart';
+import '../../config/config.dart';
 
 // ignore: must_be_immutable
 class TextButtonCustom extends StatelessWidget {
-  String text;
+  final String text;
   final Function() onTap;
-  BoxDecoration? decoration;
-  EdgeInsetsGeometry? padding;
-  TextStyle? style = AssetStyles.labelButtonSecondary;
+  final BoxDecoration? decoration;
+  final EdgeInsetsGeometry? padding;
+  TextStyle? style;
   TextButtonCustom({
     super.key,
     required this.text,
@@ -26,7 +26,11 @@ class TextButtonCustom extends StatelessWidget {
         decoration: decoration,
         child: Text(
           text,
-          style: style,
+          style: style ??
+              AssetStyles.labelMdRegular.copyWith(
+                color: AssetColors.primaryBase,
+                fontWeight: FontWeight.w500,
+              ),
         ),
       ),
     );

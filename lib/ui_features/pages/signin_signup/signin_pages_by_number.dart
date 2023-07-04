@@ -30,16 +30,15 @@ class SignInPagesByNumber extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  verticalSpace(5),
                   const Text(
                     "Welcome Back.",
-                    style: AssetStyles.h1,
+                    style: AssetStyles.t2,
                   ),
                   verticalSpace(10),
-                  Text(
+                  const Text(
                     "Log in to your account",
-                    style: AssetStyles.h3.copyWith(
-                      fontWeight: FontWeight.normal,
-                    ),
+                    style: AssetStyles.labelMdRegular,
                   ),
                   verticalSpace(30),
                   Container(
@@ -47,19 +46,22 @@ class SignInPagesByNumber extends StatelessWidget {
                   ),
                   InputCustom(
                     controller: numberController,
-                    prefixIcon: FlagCountryNumber(),
+                    prefixIcon: const FlagCountryNumber(),
+                    hintText: "Input Text",
                   ),
                   verticalSpace(15),
-                  const Text(
+                  Text(
                     "You will receive an SMS verification that may apply message and data rates.",
-                    style: AssetStyles.labelMdSmReg,
+                    style: AssetStyles.labelTinyReguler.copyWith(
+                      color: AssetColors.inkLight,
+                    ),
                   ),
                 ],
               ),
             ),
             ButtonPrimary(
+              width: screenWidth(context) * 0.8,
               onTap: () {},
-              height: 50,
               text: "Log In",
             ),
             verticalSpace(20),
@@ -69,7 +71,7 @@ class SignInPagesByNumber extends StatelessWidget {
                 nextScreen(SigninPagesByEmail.signEmail);
               },
             ),
-            verticalSpace(20),
+            verticalSpace(30),
           ],
         ),
       ),
