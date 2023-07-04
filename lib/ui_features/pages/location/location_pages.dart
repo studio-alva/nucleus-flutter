@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../ui_features/pages/signin_signup/signin_pages_by_email.dart';
-import '../../../ui_features/widgets/button_primary.dart';
-import '../../../ui_features/widgets/input/flag_country_number.dart';
-import '../../../ui_features/widgets/text_button.dart';
+import 'package:nucleus_ui_app/ui_features/model/location_model.dart';
 import '../../../config/config.dart';
 import '../../widgets/appbar/appbar_primary.dart';
 import '../../widgets/input/input_custom.dart';
+import '../../widgets/location/location_item.dart';
 
 class ChooseLocationPages extends StatefulWidget {
   static const String locationPages = "locationPages";
@@ -20,17 +18,13 @@ class ChooseLocationPages extends StatefulWidget {
 
 class _ChooseLocationPagesState extends State<ChooseLocationPages> {
   final location = TextEditingController();
-  List<Map<String, String>> temp = [];
-  List<Map<String, String>> locations = [
-    {
-      "name": "18th Street Brewery",
-      "address": "Oakley Avenue, Hammond, IN",
-    },
-    {
-      "name": "18th Avenue",
-      "address": "Brooklyn, NY",
-    },
+  final List<LocationModel> locations = [
+    LocationModel(
+        name: "18th Street Brewery", address: "Oakley Avenue, Hammond, IN"),
+    LocationModel(name: "18th Avenue", address: "Brooklyn, NY"),
   ];
+
+  List<LocationModel> temp = [];
 
   bool? search;
   @override
@@ -45,20 +39,16 @@ class _ChooseLocationPagesState extends State<ChooseLocationPages> {
 
   void _printLatestValue() {
     temp = locations
-        .where((element) => element["name"]!
-            .toLowerCase()
-            .contains(location.text.toLowerCase()))
+        .where((element) =>
+            element.name.toLowerCase().contains(location.text.toLowerCase()))
         .toList();
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    print("OK");
     return Scaffold(
-      appBar: AppBarPrimary(
-        heightAppBar: 50,
-      ),
+      appBar: const AppBarPrimary(),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         width: screenWidth(context),
@@ -68,19 +58,14 @@ class _ChooseLocationPagesState extends State<ChooseLocationPages> {
           children: [
             const Text(
               "Find nearby shop",
-              style: AssetStyles.h1,
+              style: AssetStyles.t2,
             ),
             verticalSpace(10),
-            Text(
+            const Text(
               "Enter your location to find them.",
-              style: AssetStyles.h3.copyWith(
-                fontWeight: FontWeight.normal,
-              ),
+              style: AssetStyles.labelMdRegular,
             ),
             verticalSpace(30),
-            Container(
-              width: screenWidth(context),
-            ),
             InputCustom(
               controller: location,
               prefixIcon: SvgPicture.asset(
@@ -91,30 +76,13 @@ class _ChooseLocationPagesState extends State<ChooseLocationPages> {
             ),
             verticalSpace(15),
             Flexible(
-              child: (temp.length != 0)
+              child: (temp.isNotEmpty)
                   ? ListView.builder(
                       itemCount: temp.length,
-                      itemBuilder: (context, index) => Container(
-                        padding: const EdgeInsets.all(20),
-                        child: Row(
-                          children: [
-                            Container(
-                              child: SvgPicture.asset(AssetPaths.iconPlace),
-                            ),
-                            horizontalSpace(20),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(temp[index]["name"]!),
-                                verticalSpace(5),
-                                Text(temp[index]["address"]!),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                      itemBuilder: (context, index) =>
+                          LocationItem(data: temp[index]),
                     )
-                  : Center(
+                  : const Center(
                       child: Text("Data Tidak Ditemukan"),
                     ),
             ),
