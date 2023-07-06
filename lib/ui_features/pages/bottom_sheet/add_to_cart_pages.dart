@@ -7,6 +7,7 @@ import '../../widgets/cart/cart_detail.dart';
 class AddToCartPages extends StatelessWidget {
   const AddToCartPages({super.key});
   static const String addToCartPages = "addToCartPages";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,34 +15,30 @@ class AddToCartPages extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.topCenter,
-            child: Container(
-              height: screenHeight(context) * 0.6,
-              color: Colors.amberAccent,
-              child: Stack(
-                children: [
-                  Container(
-                    width: screenWidth(context),
-                    height: screenHeight(context) * 0.6,
-                    child: const Image(
-                      image: AssetImage(
-                        AssetPaths.imageCart,
-                      ),
-                      fit: BoxFit.cover,
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: screenWidth(context),
+                  height: screenHeight(context) * 0.6,
+                  child: const Image(
+                    image: AssetImage(
+                      AssetPaths.imageCart,
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 25, top: 45),
+                    child: ButtonIconRounded(
+                      icon: AssetPaths.iconClose,
+                      onTap: () {},
+                      color: AssetColors.skyWhite,
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      margin: const EdgeInsets.only(right: 25, top: 45),
-                      child: ButtonIconRounded(
-                        icon: AssetPaths.iconClose,
-                        onTap: () {},
-                        color: AssetColors.skyWhite,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Align(
@@ -65,7 +62,7 @@ class AddToCartPages extends StatelessWidget {
                     child: Container(
                       width: 100,
                       height: 4,
-                      color: AssetColors.textGrey,
+                      color: AssetColors.inkLighter,
                     ),
                   ),
                   Expanded(
@@ -75,13 +72,13 @@ class AddToCartPages extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
-                            "Nike React Infinity Run Flyknit 2",
-                            style: AssetStyles.h2,
+                            "Nike React Infinity Run\nFlyknit 2",
+                            style: AssetStyles.t3,
                           ),
                           verticalSpace(15),
                           const Text(
                             "\$250.00 + Delivery & Tax",
-                            style: AssetStyles.labelMdSmReg1,
+                            style: AssetStyles.labelSmReguler,
                           ),
                           verticalSpace(20),
                           CartDetail(
@@ -104,6 +101,7 @@ class AddToCartPages extends StatelessWidget {
                       text: "Buy",
                       height: 50,
                       color: AssetColors.inkDarkest,
+                      width: screenWidth(context) * 0.9,
                     ),
                   ),
                 ],

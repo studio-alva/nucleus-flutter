@@ -5,11 +5,9 @@ import '../../../config/config.dart';
 class CartDetail extends StatelessWidget {
   String title;
   String caption;
-  CartDetail({
-    super.key,
-    required this.title,
-    required this.caption,
-  });
+  final Function()? onTap;
+  CartDetail(
+      {super.key, required this.title, required this.caption, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -22,22 +20,20 @@ class CartDetail extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: AssetStyles.labelMdMdReg.copyWith(
-                  color: AssetColors.inkDarkest,
-                ),
+                style: AssetStyles.labelMdRegular,
               ),
               verticalSpace(5),
               Text(
                 caption,
-                style: AssetStyles.labelMdSmReg1,
+                style: AssetStyles.labelSmReguler.copyWith(
+                  color: AssetColors.inkLighter,
+                ),
               ),
             ],
           ),
         ),
         InkWell(
-          onTap: () {
-            print("ok");
-          },
+          onTap: onTap ?? () {},
           child: SvgPicture.asset(
             AssetPaths.iconAdd,
           ),
