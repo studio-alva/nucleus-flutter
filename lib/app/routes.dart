@@ -57,9 +57,9 @@ Map<String, Widget Function(BuildContext)> routes = {
   ContentDetailPostPages.contentPostDetail: (context) =>
       ContentDetailPostPages(),
   SearchPages.searchPages: (context) => SearchPages(),
-  SearchResultPgaes.searchResult: (context) => SearchResultPgaes(),
+  SearchResultPgaes.searchResult: (context) => const SearchResultPgaes(),
   AddToCartPages.addToCartPages: (context) => const AddToCartPages(),
-  EmptyStatePages.emptyStatePages: (context) => const EmptyStatePages(),
+  EmptyStatePages.emptyStatePages: (context) => EmptyStatePages(),
   MapPages.mapPages: (context) => const MapPages(),
   FilterPages.filterPages: (context) => const FilterPages(),
   ReviewPurchasePages.reviewPurchasePages: (context) =>
