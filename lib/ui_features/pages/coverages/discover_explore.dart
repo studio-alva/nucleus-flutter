@@ -62,7 +62,7 @@ class DiscoverExplorePages extends StatelessWidget {
                   children: [
                     const Text(
                       "Top Coverage",
-                      style: AssetStyles.h1,
+                      style: AssetStyles.t3,
                     ),
                     verticalSpace(30),
                     ...coverages.map((e) {
