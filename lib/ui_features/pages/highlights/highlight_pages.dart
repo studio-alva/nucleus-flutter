@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_primary.dart';
+import '../../../config/config.dart';
+import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 
 class HighLightsPages extends StatelessWidget {
   const HighLightsPages({super.key});
@@ -22,7 +22,7 @@ class HighLightsPages extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             width: screenWidth(context),
             height: screenHeight(context),
             child: Column(
@@ -31,19 +31,24 @@ class HighLightsPages extends StatelessWidget {
                   child: Column(
                     children: [
                       verticalSpace(10),
-                      AppBarPrimary(
+                      const AppBarPrimary(
                         text: "Highlights",
-                        textStyle: AssetStyles.h3.copyWith(
-                          color: AssetColors.inkDarkest,
-                          fontWeight: FontWeight.normal,
+                      ),
+                      verticalSpace(30),
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 30),
+                        child: const Text(
+                          "How New York region\nbecame the new epicenter ",
+                          style: AssetStyles.t3,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                       verticalSpace(30),
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 30),
                         child: const Text(
-                          "How New York region became the new epicenter ",
-                          style: AssetStyles.h2,
+                          "Is New York City unique in the country’s\ncoronavirus fight — or is it just one of the\nfirst?",
+                          style: AssetStyles.labelMdRegular,
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -51,19 +56,9 @@ class HighLightsPages extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 30),
                         child: Text(
-                          "Is New York City unique in the country’s coronavirus fight — or is it just one of the first?",
-                          style: AssetStyles.h3.copyWith(
-                            fontWeight: FontWeight.normal,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      verticalSpace(30),
-                      Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 30),
-                        child: const Text(
                           "by John Cassidy  ·  March 5, 2020",
-                          style: AssetStyles.h4,
+                          style: AssetStyles.labelSmReguler
+                              .copyWith(fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
                       ),
