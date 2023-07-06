@@ -33,7 +33,9 @@ class NavBarCustom1 extends StatelessWidget {
                           shape: BoxShape.circle,
                           border: e.status
                               ? Border.all(color: AssetColors.primaryBase)
-                              : Border.all(),
+                              : Border.all(
+                                  color: AssetColors.skyDark,
+                                ),
                         ),
                       ),
                     ),
@@ -43,7 +45,9 @@ class NavBarCustom1 extends StatelessWidget {
                               verticalSpace(5),
                               Text(
                                 e.title,
-                                style: AssetStyles.labelTinyReguler,
+                                style: AssetStyles.labelTinyReguler.copyWith(
+                                  color: AssetColors.inkLight,
+                                ),
                               ),
                               verticalSpace(10)
                             ],

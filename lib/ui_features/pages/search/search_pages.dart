@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nucleus_ui_app/config/asset_paths.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/model/categories_model.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/input/categori_item.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/input/input_custom.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/navbar/navbar_custom1.dart';
+import '../../../config/config.dart';
+import '../../model/categories_model.dart';
+import '../../model/navbar_model.dart';
+import '../../../ui_features/widgets/input/categori_item.dart';
+import '../../../ui_features/widgets/input/input_custom.dart';
+import '../../../ui_features/widgets/navbar/navbar_custom1.dart';
 
 class SearchPages extends StatelessWidget {
   SearchPages({super.key});
@@ -23,6 +23,14 @@ class SearchPages extends StatelessWidget {
   final List<Categories> recent = [
     Categories(category: "Burger King"),
     Categories(category: "Gong Cha"),
+  ];
+
+  final List<NavbarModel> navbars = [
+    NavbarModel(icon: "", title: "feed", status: false),
+    NavbarModel(icon: "", title: "title", status: false),
+    NavbarModel(icon: "", title: "title", status: false),
+    NavbarModel(icon: "", title: "title", status: false),
+    NavbarModel(icon: "", title: "title", status: false),
   ];
 
   @override
@@ -46,42 +54,48 @@ class SearchPages extends StatelessWidget {
                   AssetPaths.iconVoice,
                   fit: BoxFit.scaleDown,
                 ),
+                hintText: "Search",
               ),
               verticalSpace(20),
               Expanded(
-                child: Container(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          "Recent Search",
-                          style: AssetStyles.h3,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Recent Search",
+                        style: AssetStyles.labelMdRegular.copyWith(
+                          fontWeight: FontWeight.bold,
                         ),
-                        verticalSpace(10),
-                        ...recent
-                            .map(
-                              (e) => CategoryItem(categories: e),
-                            )
-                            .toList(),
-                        verticalSpace(15),
-                        const Text(
-                          "Categories",
-                          style: AssetStyles.h3,
+                      ),
+                      verticalSpace(10),
+                      ...recent
+                          .map(
+                            (e) => CategoryItem(categories: e),
+                          )
+                          .toList(),
+                      verticalSpace(20),
+                      Text(
+                        "Categories",
+                        style: AssetStyles.labelMdRegular.copyWith(
+                          fontWeight: FontWeight.bold,
                         ),
-                        verticalSpace(10),
-                        ...category
-                            .map(
-                              (e) => CategoryItem(categories: e),
-                            )
-                            .toList(),
-                      ],
-                    ),
+                      ),
+                      verticalSpace(10),
+                      ...category
+                          .map(
+                            (e) => CategoryItem(categories: e),
+                          )
+                          .toList(),
+                    ],
                   ),
                 ),
               ),
-              // const NavBarCustom1(),
+              NavBarCustom1(
+                data: navbars,
+                height: 65,
+              ),
             ],
           ),
         ),
