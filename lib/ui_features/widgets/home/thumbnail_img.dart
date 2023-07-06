@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class ThumbnailImg extends StatelessWidget {
-  double? width;
-  Widget? widget;
-  ThumbnailImg({
+  final double? width;
+  final Widget? widget;
+  const ThumbnailImg({
     super.key,
     required this.hits,
     this.width,
@@ -32,12 +32,10 @@ class ThumbnailImg extends StatelessWidget {
             ),
           ),
           verticalSpace(10),
-          Container(
-            child: Text(
-              hits["title"]!,
-              style: AssetStyles.labelMdSmReg1
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
+          Text(
+            hits["title"]!,
+            style: AssetStyles.labelSmReguler
+                .copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),

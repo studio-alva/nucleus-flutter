@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class ThumbnailImg1 extends StatelessWidget {
-  double? width;
-  Widget? widget;
-  ThumbnailImg1({
+  final double? width;
+  final Widget? widget;
+  const ThumbnailImg1({
     super.key,
     required this.data,
     this.width,
@@ -33,21 +33,19 @@ class ThumbnailImg1 extends StatelessWidget {
             ),
           ),
           verticalSpace(10),
-          Container(
-            child: Text(
-              data["title"]!,
-              style: AssetStyles.labelMdSmReg1
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
+          Text(
+            data["title"]!,
+            style: AssetStyles.labelMdRegular
+                .copyWith(fontWeight: FontWeight.bold),
           ),
           verticalSpace(10),
-          Container(
-            child: Text(
-              data["desc"]!,
-              style: AssetStyles.labelMdSmReg1
-                  .copyWith(fontWeight: FontWeight.normal),
-              maxLines: 2,
+          Text(
+            data["desc"]!,
+            style: AssetStyles.labelTinyReguler.copyWith(
+              fontWeight: FontWeight.normal,
+              color: AssetColors.inkLight,
             ),
+            maxLines: 2,
           ),
         ],
       ),

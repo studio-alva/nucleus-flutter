@@ -69,7 +69,7 @@ class HomePages1 extends StatelessWidget {
                     children: const [
                       Text(
                         "Good Morning!",
-                        style: AssetStyles.h2,
+                        style: AssetStyles.t3,
                       ),
                       CircleAvatar(),
                     ],
@@ -90,10 +90,11 @@ class HomePages1 extends StatelessWidget {
                 verticalSpace(20),
                 Text(
                   "Just For You",
-                  style: AssetStyles.h3.copyWith(fontWeight: FontWeight.bold),
+                  style: AssetStyles.labelMdRegular
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
                 verticalSpace(20),
-                Container(
+                SizedBox(
                   height: screenHeight(context) * 0.3,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -107,10 +108,12 @@ class HomePages1 extends StatelessWidget {
                 verticalSpace(20),
                 Text(
                   "Popular Songs",
-                  style: AssetStyles.h3.copyWith(fontWeight: FontWeight.bold),
+                  style: AssetStyles.labelLgRegular.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 verticalSpace(20),
-                Container(
+                SizedBox(
                   height: screenHeight(context) * 0.3,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
