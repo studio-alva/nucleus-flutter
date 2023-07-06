@@ -20,16 +20,20 @@ class ChatView extends StatelessWidget {
             children: [
               Text(
                 read ? "Others" : "Unread - ${data.length}",
-                style: AssetStyles.h3,
+                style: AssetStyles.labelMdRegular.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
                 textAlign: TextAlign.left,
               ),
               verticalSpace(20),
               Column(
                 children: data
                     .where((element) => element["read"] == read)
-                    .map((e) => ChatPersonItem(
-                          dataChat: e,
-                        ))
+                    .map(
+                      (e) => ChatPersonItem(
+                        dataChat: e,
+                      ),
+                    )
                     .toList(),
               ),
             ],

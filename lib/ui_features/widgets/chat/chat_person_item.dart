@@ -26,25 +26,29 @@ class ChatPersonItem extends StatelessWidget {
               children: [
                 Text(
                   dataChat["name"],
-                  style: AssetStyles.labelMdMdReg,
+                  style: AssetStyles.labelSmReguler,
                 ),
                 verticalSpace(2),
                 Text(
                   dataChat["status"],
-                  style: AssetStyles.labelMdMdReg
+                  style: AssetStyles.labelSmReguler
                       .copyWith(fontWeight: FontWeight.w700),
                 ),
                 verticalSpace(2),
                 Text(
                   dataChat["message"],
-                  style: AssetStyles.labelMdMdReg,
+                  style: AssetStyles.labelSmReguler.copyWith(
+                    color: AssetColors.inkLight,
+                  ),
                 ),
               ],
             ),
           ),
           Text(
             dataChat["date"],
-            style: AssetStyles.labelMdMdReg,
+            style: AssetStyles.labelSmReguler.copyWith(
+              color: AssetColors.inkLight,
+            ),
           ),
         ],
       ),

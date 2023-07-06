@@ -4,15 +4,17 @@ import '../../../ui_features/model/navbar_model.dart';
 
 class NavBarCustom1 extends StatelessWidget {
   final List<NavbarModel> data;
+  final double? height;
   const NavBarCustom1({
     super.key,
     required this.data,
+    this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70,
+      height: height ?? 70,
       child: Row(
         children: data
             .map(
@@ -35,12 +37,18 @@ class NavBarCustom1 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    verticalSpace(5),
-                    Text(
-                      e.title,
-                      style: AssetStyles.labelTinyReguler,
-                    ),
-                    verticalSpace(10),
+                    (e.title != "")
+                        ? Column(
+                            children: [
+                              verticalSpace(5),
+                              Text(
+                                e.title,
+                                style: AssetStyles.labelTinyReguler,
+                              ),
+                              verticalSpace(10)
+                            ],
+                          )
+                        : verticalSpace(15),
                   ],
                 ),
               ),

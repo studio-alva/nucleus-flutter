@@ -87,19 +87,18 @@ class InboxPages1 extends StatelessWidget {
                     children: [
                       const Text(
                         "Inbox",
-                        style: AssetStyles.h1,
+                        style: AssetStyles.t2,
                       ),
                       ButtonPrimary(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 10,
-                        ),
                         onTap: () {},
                         text: "WRITE",
+                        width: 80,
+                        height: 40,
                       ),
                     ],
                   ),
                 ),
+                verticalSpace(10),
                 ChatView(
                   data: data
                       .where((element) => element["read"] == false)

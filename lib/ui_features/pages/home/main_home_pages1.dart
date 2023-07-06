@@ -149,6 +149,7 @@ class _MainHomePagesState extends State<MainHomePages> {
                 ),
               ),
               NavBarCustom1(
+                height: 55,
                 data: navbars,
               ),
             ],

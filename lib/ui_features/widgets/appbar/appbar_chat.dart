@@ -13,29 +13,26 @@ class AppBarChat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Expanded(
-            child: InputCustom(
-              controller: search,
-              hintText: "Search Email",
-              contentPadding:
-                  const EdgeInsetsDirectional.symmetric(vertical: 5),
-              prefixIcon: SvgPicture.asset(
-                AssetPaths.iconSearch,
-                width: 10,
-                height: 10,
-                fit: BoxFit.scaleDown,
-              ),
+    return Row(
+      children: [
+        Expanded(
+          child: InputCustom(
+            controller: search,
+            hintText: "Search Email",
+            contentPadding: const EdgeInsetsDirectional.symmetric(vertical: 5),
+            prefixIcon: SvgPicture.asset(
+              AssetPaths.iconSearch,
+              width: 10,
+              height: 10,
+              fit: BoxFit.scaleDown,
             ),
           ),
-          horizontalSpace(20),
-          const CircleAvatar(
-            backgroundImage: AssetImage(AssetPaths.imageAvatar1),
-          ),
-        ],
-      ),
+        ),
+        horizontalSpace(20),
+        const CircleAvatar(
+          backgroundImage: AssetImage(AssetPaths.imageAvatar1),
+        ),
+      ],
     );
   }
 }
