@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/asset_colors.dart';
-import 'package:nucleus_ui_app/config/asset_paths.dart';
-import 'package:nucleus_ui_app/config/asset_styles.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/model/posts_model.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_primary.dart';
+import '../../../config/config.dart';
+import '../../../ui_features/model/posts_model.dart';
+import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 
 class ContentDetailPostPages extends StatelessWidget {
   ContentDetailPostPages({super.key});
   static const String contentPostDetail = "contentPostDetail";
 
   final Posts post = Posts(
-      title: "Is It Safe to Fly During Pandemic?",
+      title: "Is It Safe to Fly\nDuring Pandemic?",
       head: "NY TIMES",
       authors: "Tariro Mzezewa",
       time: "Nov. 25, 2020",
@@ -25,7 +22,7 @@ class ContentDetailPostPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarPrimary(),
+      appBar: const AppBarPrimary(),
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -35,36 +32,34 @@ class ContentDetailPostPages extends StatelessWidget {
               verticalSpace(10),
               Text(
                 post.head,
-                style: AssetStyles.labelMdSmReg1.copyWith(
+                style: AssetStyles.labelSmReguler.copyWith(
+                  color: AssetColors.inkLight,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               verticalSpace(20),
               Text(
                 post.title,
-                style: AssetStyles.h1,
+                style: AssetStyles.t2,
               ),
               verticalSpace(20),
-              Row(
-                children: [
-                  const Text(
-                    "by ",
-                    style: AssetStyles.labelMdSmReg1,
-                  ),
-                  Text(
-                    post.authors,
-                    style: AssetStyles.labelMdSmReg1.copyWith(
+              RichText(
+                text: TextSpan(children: [
+                  const TextSpan(
+                      text: "by ", style: AssetStyles.labelSmReguler),
+                  TextSpan(
+                    text: post.authors,
+                    style: AssetStyles.labelSmReguler.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    " - ${post.time}",
-                    style: AssetStyles.labelMdSmReg1,
-                  ),
-                ],
+                  TextSpan(
+                      text: " - ${post.time}",
+                      style: AssetStyles.labelSmReguler),
+                ]),
               ),
               verticalSpace(20),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Image(
                   image: AssetImage(post.imgThumb),
@@ -74,9 +69,7 @@ class ContentDetailPostPages extends StatelessWidget {
               verticalSpace(20),
               Text(
                 post.content,
-                style: AssetStyles.labelMdMdReg.copyWith(
-                  color: AssetColors.inkDarkest,
-                ),
+                style: AssetStyles.labelMdRegular,
               ),
               verticalSpace(20),
             ],
