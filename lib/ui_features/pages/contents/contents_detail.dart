@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_primary.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/button_primary.dart';
-
+import '../../../config/config.dart';
+import '../../../ui_features/widgets/appbar/appbar_primary.dart';
+import '../../../ui_features/widgets/button_primary.dart';
 import '../../widgets/button/button_icon_rounded.dart';
 import '../../widgets/home/detail_row.dart';
 
@@ -16,7 +15,7 @@ class ContentDetailPages extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             child: Column(
               children: [
@@ -37,32 +36,28 @@ class ContentDetailPages extends StatelessWidget {
                         verticalSpace(30),
                         const Text(
                           "Basic Yoga",
-                          style: AssetStyles.h1,
+                          style: AssetStyles.t2,
                         ),
                         verticalSpace(20),
                         Container(
                           margin: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(
+                          child: const Text(
                             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                             textAlign: TextAlign.center,
-                            style: AssetStyles.labelMdMdReg
-                                .copyWith(color: AssetColors.inkDarkest),
+                            style: AssetStyles.labelMdRegular,
                           ),
                         ),
                         verticalSpace(40),
                         Row(
-                          children: [
-                            Expanded(
-                              child: DetailRow(
-                                title: "15 Minutes",
-                                subTitle: "Duration",
-                              ),
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: const [
+                            DetailRow(
+                              title: "15 Minutes",
+                              subTitle: "Duration",
                             ),
-                            Expanded(
-                              child: DetailRow(
-                                title: "Beginner 1",
-                                subTitle: "Level 1",
-                              ),
+                            DetailRow(
+                              title: "Beginner 1",
+                              subTitle: "Level 1",
                             )
                           ],
                         ),
@@ -82,11 +77,6 @@ class ContentDetailPages extends StatelessWidget {
                         onTap: () {},
                       ),
                       ButtonPrimary(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 15,
-                          horizontal: 75,
-                        ),
-                        radius: 100,
                         color: AssetColors.inkDarkest,
                         onTap: () {},
                         text: "Start",
@@ -101,7 +91,7 @@ class ContentDetailPages extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             height: 70,
             child: AppBarPrimary(
               backgroundColor: Colors.transparent,

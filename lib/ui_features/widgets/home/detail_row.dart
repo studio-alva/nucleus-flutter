@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class DetailRow extends StatelessWidget {
-  String? title;
-  String? subTitle;
-  DetailRow({
+  final String? title;
+  final String? subTitle;
+  const DetailRow({
     super.key,
     this.subTitle,
     this.title,
@@ -12,25 +12,18 @@ class DetailRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Text(
-            title!,
-            style: AssetStyles.labelMdMdReg.copyWith(
-              color: AssetColors.inkDarkest,
+    return Column(
+      children: [
+        Text(title!,
+            style: AssetStyles.labelMdRegular.copyWith(
               fontWeight: FontWeight.bold,
-            ),
-          ),
-          verticalSpace(5),
-          Text(
-            subTitle!,
-            style: AssetStyles.labelMdMdReg.copyWith(
-              color: AssetColors.inkDarkest,
-            ),
-          ),
-        ],
-      ),
+            )),
+        verticalSpace(5),
+        Text(
+          subTitle!,
+          style: AssetStyles.labelMdRegular,
+        ),
+      ],
     );
   }
 }
