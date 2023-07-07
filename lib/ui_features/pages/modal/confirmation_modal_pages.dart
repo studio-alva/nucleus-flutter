@@ -36,20 +36,18 @@ class ModalConfirmationBody extends StatelessWidget {
         vertical: 40,
         horizontal: 20,
       ),
-      height: screenHeight(context) * 0.2,
+      height: screenHeight(context) * 0.3,
       decoration: const BoxDecoration(),
       child: Column(
         children: [
           const Text(
             "Remove Item ?",
-            style: AssetStyles.h2,
+            style: AssetStyles.t3,
           ),
           verticalSpace(20),
-          Text(
-            "Are you sure want to remove this item from your cart?",
-            style: AssetStyles.h3.copyWith(
-              fontWeight: FontWeight.normal,
-            ),
+          const Text(
+            "Are you sure want to remove this item from\nyour cart?",
+            style: AssetStyles.labelMdRegular,
             textAlign: TextAlign.center,
           ),
 
@@ -57,14 +55,13 @@ class ModalConfirmationBody extends StatelessWidget {
           ButtonPrimary(
             onTap: () {},
             text: "Remove Item",
-            height: 50,
+            height: 40,
+            width: screenWidth(context) * 0.9,
           ),
           verticalSpace(20),
           TextButtonCustom(
             text: "Cancel",
-            style: AssetStyles.labelMdMdReg.copyWith(
-              color: AssetColors.inkDarkest,
-            ),
+            style: AssetStyles.labelMdRegular,
             onTap: () {},
           ),
           // verticalSpace(20),
