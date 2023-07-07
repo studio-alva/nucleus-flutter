@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class DescriptionOneRow extends StatelessWidget {
-  String? left;
-  String? right;
-  bool? isBold;
-  double? fontSize;
-  DescriptionOneRow({
+  final String? left;
+  final String? right;
+  final bool? isBold;
+  final double? fontSize;
+  const DescriptionOneRow({
     super.key,
     this.left,
     this.right,
@@ -21,15 +21,14 @@ class DescriptionOneRow extends StatelessWidget {
       children: [
         Text(
           left!,
-          style: AssetStyles.labelMdMdReg.copyWith(
-            color: AssetColors.inkDarkest,
+          style: AssetStyles.labelMdRegular.copyWith(
             fontWeight: isBold! ? FontWeight.bold : FontWeight.normal,
             fontSize: fontSize,
           ),
         ),
         Text(
           right!,
-          style: AssetStyles.labelMdMdReg.copyWith(
+          style: AssetStyles.labelMdRegular.copyWith(
             color: AssetColors.inkDarkest,
             fontWeight: isBold! ? FontWeight.bold : FontWeight.normal,
             fontSize: fontSize,

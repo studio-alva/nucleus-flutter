@@ -4,7 +4,6 @@ import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 import '../../../ui_features/widgets/button_primary.dart';
 import '../../../ui_features/widgets/cart/checkout_item.dart';
 import '../../../ui_features/widgets/text_button.dart';
-
 import '../../widgets/cart/descriotion_one_row.dart';
 
 class ReviewPurchasePages extends StatelessWidget {
@@ -14,7 +13,7 @@ class ReviewPurchasePages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarPrimary(),
+      appBar: const AppBarPrimary(),
       body: Container(
         padding: const EdgeInsets.only(left: 20, bottom: 20, right: 20),
         child: Column(
@@ -27,7 +26,7 @@ class ReviewPurchasePages extends StatelessWidget {
                   children: [
                     const Text(
                       "Review Purchase",
-                      style: AssetStyles.h1,
+                      style: AssetStyles.t2,
                     ),
                     verticalSpace(
                       30,
@@ -52,7 +51,13 @@ class ReviewPurchasePages extends StatelessWidget {
                     verticalSpace(
                       25,
                     ),
-                    TextButtonCustom(text: "Have a gift code?", onTap: () {}),
+                    TextButtonCustom(
+                      text: "Have a gift code?",
+                      onTap: () {},
+                      style: AssetStyles.labelMdRegular.copyWith(
+                        color: AssetColors.primaryDarkest,
+                      ),
+                    ),
                     verticalSpace(
                       25,
                     ),
@@ -62,22 +67,22 @@ class ReviewPurchasePages extends StatelessWidget {
                     verticalSpace(
                       25,
                     ),
-                    DescriptionOneRow(
+                    const DescriptionOneRow(
                       left: "Subtotal",
                       right: "\$97.00",
                     ),
                     verticalSpace(20),
-                    DescriptionOneRow(
+                    const DescriptionOneRow(
                       left: "Shipping & Handling",
                       right: "\$19.99",
                     ),
                     verticalSpace(20),
-                    DescriptionOneRow(
+                    const DescriptionOneRow(
                       left: "Tax",
                       right: "\$4.00",
                     ),
                     verticalSpace(20),
-                    DescriptionOneRow(
+                    const DescriptionOneRow(
                       left: "Total",
                       right: "\$120.00",
                       isBold: true,
@@ -87,21 +92,36 @@ class ReviewPurchasePages extends StatelessWidget {
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "By clicking “Purchase”, you accept the",
-                  style: AssetStyles.labelMdSmReg1,
+            Center(
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    const TextSpan(
+                      text: "By clicking",
+                      style: AssetStyles.labelTinyReguler,
+                    ),
+                    const TextSpan(
+                      text: " “Purchase”",
+                      style: AssetStyles.labelSmReguler,
+                    ),
+                    const TextSpan(
+                      text: ", you accept the ",
+                      style: AssetStyles.labelTinyReguler,
+                    ),
+                    TextSpan(
+                      text: "terms.",
+                      style: AssetStyles.labelTinyReguler.copyWith(
+                        color: AssetColors.primaryBase,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text("terms."),
-                ),
-              ],
+              ),
             ),
+            verticalSpace(15),
             ButtonPrimary(
-              height: 40,
+              width: screenWidth(context) * 0.9,
               onTap: () {},
               text: "Purchase",
             ),
