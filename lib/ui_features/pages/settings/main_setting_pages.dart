@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/model/navbar_model.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/button_primary.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/settings/button_setting_item_no_icon.dart';
-
+import '../../../config/config.dart';
+import '../../../ui_features/model/navbar_model.dart';
+import '../../../ui_features/widgets/button_primary.dart';
+import '../../../ui_features/widgets/settings/button_setting_item_no_icon.dart';
 import '../../widgets/navbar/navbar_custom1.dart';
 import '../../widgets/settings/button_setting_item.dart';
 
