@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+// ignore: must_be_immutable
 class ButtonIconRoundedNoBorder extends StatelessWidget {
   double? width = 56;
   double? height = 56;
-  String icon;
-  Function() onTap;
+  final String icon;
+  final Function() onTap;
   BoxDecoration? decoration = const BoxDecoration(
     shape: BoxShape.circle,
   );

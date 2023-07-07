@@ -20,7 +20,7 @@ class VideoCallPages extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          AppBarPrimary(),
+          const AppBarPrimary(),
           Align(
             alignment: Alignment.topRight,
             child: Container(
@@ -31,7 +31,6 @@ class VideoCallPages extends StatelessWidget {
               width: screenWidth(context) * 0.3,
               height: screenHeight(context) * 0.2,
               decoration: BoxDecoration(
-                color: Colors.amber,
                 borderRadius: BorderRadius.circular(20),
                 image: const DecorationImage(
                   image: AssetImage(AssetPaths.imageMVidSm),
@@ -40,61 +39,55 @@ class VideoCallPages extends StatelessWidget {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: SizedBox(
-              width: screenWidth(context),
-              height: screenHeight(context) * 0.2,
-              child: Column(
-                children: [
-                  Text(
-                    "James Norris",
-                    style: AssetStyles.h2.copyWith(
-                      color: AssetColors.skyWhite,
-                    ),
-                  ),
-                  verticalSpace(10),
-                  Text(
-                    "01:20:12",
-                    style: AssetStyles.h3.copyWith(
-                      color: AssetColors.skyWhite,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  verticalSpace(40),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 100),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ButtonIconRoundedNoBorder(
-                          onTap: () {
-                            print("Viode");
-                          },
-                          icon: AssetPaths.iconVideo,
-                        ),
-                        ButtonIconRoundedNoBorder(
-                          icon: AssetPaths.iconCall,
-                          height: 70,
-                          width: 70,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AssetColors.redButton,
-                          ),
-                          onTap: () {
-                            print("End Call");
-                          },
-                        ),
-                        ButtonIconRoundedNoBorder(
-                          icon: AssetPaths.iconVoice1,
-                          onTap: () {},
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+          Column(
+            children: [
+              const Spacer(),
+              Text(
+                "James Norris",
+                style: AssetStyles.t3.copyWith(
+                  color: AssetColors.skyWhite,
+                ),
               ),
-            ),
+              verticalSpace(10),
+              Text(
+                "01:20:12",
+                style: AssetStyles.labelMdRegular.copyWith(
+                  color: AssetColors.skyWhite,
+                ),
+              ),
+              verticalSpace(40),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 100),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ButtonIconRoundedNoBorder(
+                      onTap: () {
+                        print("Viode");
+                      },
+                      icon: AssetPaths.iconVideo,
+                    ),
+                    ButtonIconRoundedNoBorder(
+                      icon: AssetPaths.iconCall,
+                      height: 70,
+                      width: 70,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AssetColors.redButton,
+                      ),
+                      onTap: () {
+                        print("End Call");
+                      },
+                    ),
+                    ButtonIconRoundedNoBorder(
+                      icon: AssetPaths.iconVoice1,
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ),
+              verticalSpace(40),
+            ],
           ),
         ],
       ),
