@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nucleus_ui_app/config/asset_colors.dart';
-import 'package:nucleus_ui_app/config/asset_paths.dart';
-import 'package:nucleus_ui_app/config/asset_styles.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/button_primary.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/text_button.dart';
-
-import '../../../config/ui_helper.dart';
+import '../../../config/config.dart';
+import '../../../ui_features/widgets/button_primary.dart';
+import '../../../ui_features/widgets/text_button.dart';
 
 class InfoModalPages extends StatelessWidget {
   const InfoModalPages({super.key});
@@ -45,14 +41,12 @@ class ModalInfoBody extends StatelessWidget {
         children: [
           const Text(
             "Introducing New Feature",
-            style: AssetStyles.h2,
+            style: AssetStyles.t3,
           ),
           verticalSpace(20),
-          Text(
-            "This is a short explanation about the new feature of the app.",
-            style: AssetStyles.h3.copyWith(
-              fontWeight: FontWeight.normal,
-            ),
+          const Text(
+            "This is a short explanation about the new\nfeature of the app.",
+            style: AssetStyles.labelMdRegular,
             textAlign: TextAlign.center,
           ),
           Expanded(
@@ -69,14 +63,15 @@ class ModalInfoBody extends StatelessWidget {
           verticalSpace(20),
           ButtonPrimary(
             onTap: () {},
+            width: screenWidth(context) * 0.9,
             text: "Check Out",
-            height: 50,
           ),
           verticalSpace(20),
           TextButtonCustom(
             text: "Maybe Later",
-            style: AssetStyles.labelMdMdReg.copyWith(
-              color: AssetColors.inkDarkest,
+            style: AssetStyles.labelMdRegular.copyWith(
+              color: AssetColors.inkDarker,
+              fontWeight: FontWeight.w500,
             ),
             onTap: () {},
           ),
