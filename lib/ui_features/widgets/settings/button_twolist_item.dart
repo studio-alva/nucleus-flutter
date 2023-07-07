@@ -3,18 +3,20 @@ import 'package:flutter_svg/svg.dart';
 import '../../../config/config.dart';
 
 class ButtonTwoListItem extends StatelessWidget {
-  String title;
-  String? subTitle;
-  ButtonTwoListItem({
+  final String title;
+  final String? subTitle;
+  final Function() onTap;
+  const ButtonTwoListItem({
     super.key,
     required this.title,
     this.subTitle,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 30,
@@ -28,15 +30,13 @@ class ButtonTwoListItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: AssetStyles.labelMdMdReg.copyWith(
-                    color: AssetColors.inkDarkest,
-                  ),
+                  style: AssetStyles.labelMdRegular,
                 ),
                 verticalSpace(5),
                 Text(
                   subTitle!,
-                  style: AssetStyles.labelMdSmReg1.copyWith(
-                    color: AssetColors.textGrey,
+                  style: AssetStyles.labelMdRegular.copyWith(
+                    color: AssetColors.inkLighter,
                   ),
                 ),
               ],

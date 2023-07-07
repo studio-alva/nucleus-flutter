@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class HeaderSettingItem extends StatelessWidget {
-  String title;
-  HeaderSettingItem({super.key, required this.title});
+  final String title;
+  const HeaderSettingItem({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,9 @@ class HeaderSettingItem extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           title,
-          style: AssetStyles.labelMdSmReg,
+          style: AssetStyles.labelTinyReguler.copyWith(
+            color: AssetColors.inkLight,
+          ),
         ),
       ),
     );

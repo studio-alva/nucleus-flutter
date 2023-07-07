@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class ViewProfileListItem extends StatelessWidget {
-  String? leftText;
-  String? rightText;
-  ViewProfileListItem({
+  final String? leftText;
+  final String? rightText;
+  final TextStyle? rightStyle;
+  const ViewProfileListItem({
     super.key,
     this.leftText,
     this.rightText,
+    this.rightStyle,
   });
 
   @override
@@ -22,15 +24,11 @@ class ViewProfileListItem extends StatelessWidget {
         children: [
           Text(
             leftText!,
-            style: AssetStyles.labelMdMdReg.copyWith(
-              color: AssetColors.inkDarkest,
-            ),
+            style: AssetStyles.labelMdRegular,
           ),
           Text(
             rightText!,
-            style: AssetStyles.labelMdMdReg.copyWith(
-              color: AssetColors.inkDarkest,
-            ),
+            style: rightStyle ?? AssetStyles.labelMdRegular,
           ),
         ],
       ),

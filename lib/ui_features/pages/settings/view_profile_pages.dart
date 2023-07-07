@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nucleus_ui_app/ui_features/model/navbar_model.dart';
 import 'package:nucleus_ui_app/ui_features/widgets/button_primary.dart';
 import 'package:nucleus_ui_app/ui_features/widgets/navbar/navbar_custom1.dart';
 import '../../../config/config.dart';
@@ -14,13 +15,15 @@ class ViewProfilePages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<NavbarModel> navbars = [
+      NavbarModel(icon: "", title: "Feed", status: false),
+      NavbarModel(icon: "", title: "title", status: false),
+      NavbarModel(icon: "", title: "title", status: false),
+      NavbarModel(icon: "", title: "title", status: false),
+    ];
     return Scaffold(
-      appBar: AppBarPrimary(
-        text: "Settings",
-        textStyle: AssetStyles.h3.copyWith(
-          fontWeight: FontWeight.w500,
-          color: AssetColors.inkDarkest,
-        ),
+      appBar: const AppBarPrimary(
+        text: "My Details",
       ),
       body: Column(
         children: [
@@ -50,53 +53,47 @@ class ViewProfilePages extends StatelessWidget {
                     ),
                   ),
                   verticalSpace(20),
-                  const Divider(
-                    thickness: 2,
-                  ),
-                  ViewProfileListItem(
+                  const Divider(),
+                  const ViewProfileListItem(
                     leftText: "First Name",
                     rightText: "Juinal",
                   ),
-                  const Divider(
-                    thickness: 2,
-                  ),
+                  const Divider(),
                   ViewProfileListItem(
                     leftText: "Last Name",
                     rightText: "Enter Last name",
+                    rightStyle: AssetStyles.labelMdRegular.copyWith(
+                      color: AssetColors.skyDark,
+                    ),
                   ),
-                  const Divider(
-                    thickness: 2,
-                  ),
-                  ViewProfileListItem(
+                  const Divider(),
+                  const ViewProfileListItem(
                     leftText: "Location",
                     rightText: "Indonesia",
                   ),
-                  const Divider(
-                    thickness: 2,
-                  ),
-                  ViewProfileListItem(
-                    leftText: "Location",
-                    rightText: "Indonesia",
-                  ),
-                  HeaderSettingItem(
+                  const HeaderSettingItem(
                     title: "ACCOUNT INFORMATION",
                   ),
-                  ViewProfileListItem(
+                  const ViewProfileListItem(
                     leftText: "Email",
                     rightText: "juinal@studioalva.co",
                   ),
-                  HeaderSettingItem(
+                  const HeaderSettingItem(
                     title: "INTERNATIONAL PREFERENCES",
                   ),
                   ButtonTwoListItem(
                     title: "Language",
                     subTitle: "English",
+                    onTap: () {},
                   ),
                 ],
               ),
             ),
           ),
-          // const NavBarCustom1(),
+          NavBarCustom1(
+            data: [...navbars],
+            height: 65,
+          ),
         ],
       ),
     );
