@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 import '../../../config/config.dart';
 import '../../../ui_features/widgets/button_primary.dart';
 import '../../widgets/checkout/list_checkout.dart';
@@ -20,6 +21,14 @@ class CheckoutPages extends StatelessWidget {
               image: AssetImage(AssetPaths.imageCheckout),
               fit: BoxFit.cover,
             ),
+          ),
+          AppBarPrimary(
+            iconColor: AssetColors.skyWhite,
+            text: "Checkout",
+            textStyle: AssetStyles.labelLgRegular.copyWith(
+              color: AssetColors.skyWhite,
+            ),
+            heightAppBar: 50,
           ),
           Container(
             margin: EdgeInsets.only(top: screenHeight(context) * 0.3),
@@ -47,42 +56,42 @@ class CheckoutPages extends StatelessWidget {
                             children: [
                               const Text(
                                 "Obvilion",
-                                style: AssetStyles.h2,
+                                style: AssetStyles.t3,
                               ),
                               verticalSpace(15),
-                              const Text(
-                                "Wed, 20 Jan - 10:00 AM",
-                                style: AssetStyles.h2i,
-                              ),
-                              verticalSpace(5),
                               Text(
-                                "CMX Cinemas, New York",
-                                style: AssetStyles.labelMdSmReg1.copyWith(
-                                  color: AssetColors.textGrey,
+                                "Wed, 20 Jan - 10:00 AM",
+                                style: AssetStyles.labelSmReguler.copyWith(
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
+                              verticalSpace(5),
+                              Text("CMX Cinemas, New York",
+                                  style: AssetStyles.labelSmReguler.copyWith(
+                                    color: AssetColors.inkLight,
+                                  )),
                               verticalSpace(20),
                             ],
                           ),
                         ],
                       ),
                       verticalSpace(50),
-                      ListCheckout(
+                      const ListCheckout(
                         leftText: "Movie ticket",
                         rightText: "\$22.00",
                       ),
                       verticalSpace(20),
-                      ListCheckout(
+                      const ListCheckout(
                         leftText: "Qty",
                         rightText: "2",
                       ),
                       verticalSpace(20),
-                      ListCheckout(
+                      const ListCheckout(
                         leftText: "Convenience fees",
                         rightText: "\$1.00",
                       ),
                       verticalSpace(20),
-                      ListCheckout(
+                      const ListCheckout(
                         leftText: "Subtotal",
                         rightText: "\$43.00",
                       ),
@@ -91,7 +100,7 @@ class CheckoutPages extends StatelessWidget {
                         thickness: 2,
                       ),
                       verticalSpace(10),
-                      ListCheckout(
+                      const ListCheckout(
                         leftText: "Total amount",
                         rightText: "\$43.00",
                       ),
@@ -101,7 +110,7 @@ class CheckoutPages extends StatelessWidget {
                 ButtonPrimary(
                   onTap: () {},
                   text: "Pay . \$ 43.00",
-                  height: 50,
+                  width: screenWidth(context) * 0.9,
                 ),
                 verticalSpace(20),
               ],

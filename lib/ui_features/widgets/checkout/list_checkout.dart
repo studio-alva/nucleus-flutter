@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class ListCheckout extends StatelessWidget {
-  String leftText;
-  String rightText;
-  ListCheckout({
+  final String leftText;
+  final String rightText;
+  const ListCheckout({
     super.key,
     required this.leftText,
     required this.rightText,
@@ -17,13 +17,15 @@ class ListCheckout extends StatelessWidget {
       children: [
         Text(
           leftText,
-          style: AssetStyles.h3.copyWith(
-            color: AssetColors.textGrey,
+          style: AssetStyles.labelMdRegular.copyWith(
+            color: AssetColors.inkLight,
           ),
         ),
         Text(
           rightText,
-          style: AssetStyles.h3,
+          style: AssetStyles.labelMdRegular.copyWith(
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ],
     );
