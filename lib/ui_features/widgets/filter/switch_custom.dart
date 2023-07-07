@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
-class RadioCustom extends StatelessWidget {
-  Function(bool?)? onChange;
-  String? text;
-  RadioCustom({
+class SwitchCustom extends StatelessWidget {
+  final Function(bool?)? onChange;
+  final String? text;
+  const SwitchCustom({
     super.key,
     required this.isChecked,
     this.onChange,
@@ -21,11 +21,9 @@ class RadioCustom extends StatelessWidget {
       children: [
         Text(
           text!,
-          style: AssetStyles.labelMdMdReg.copyWith(
-            color: AssetColors.inkDarkest,
-          ),
+          style: AssetStyles.labelMdRegular,
         ),
-        Container(
+        SizedBox(
           width: 25,
           height: 25,
           child: Switch(value: isChecked, onChanged: onChange),

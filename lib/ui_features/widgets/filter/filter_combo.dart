@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../config/config.dart';
 
+// ignore: must_be_immutable
 class FilterComboBox extends StatelessWidget {
-  String? title;
-  String? subTitle;
+  final String? title;
+  final String? subTitle;
   Function() onTap;
-  String? icon;
-
+  final String? icon;
+  final bool? isActive;
   FilterComboBox({
     super.key,
     this.title,
     this.subTitle,
     required this.onTap,
+    this.isActive = false,
     this.icon = AssetPaths.iconDown,
   });
 
@@ -28,17 +30,21 @@ class FilterComboBox extends StatelessWidget {
             children: [
               Text(
                 title!,
-                style: AssetStyles.h3,
+                style: AssetStyles.labelMdRegular.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               verticalSpace(5),
               Text(
                 subTitle!,
-                style: AssetStyles.labelMdSmReg1,
+                style: AssetStyles.labelSmReguler.copyWith(
+                  color: AssetColors.inkLighter,
+                ),
               ),
             ],
           ),
           SvgPicture.asset(
-            icon!,
+            (isActive!) ? AssetPaths.iconUp : AssetPaths.iconDown,
             width: 10,
             height: 10,
           ),

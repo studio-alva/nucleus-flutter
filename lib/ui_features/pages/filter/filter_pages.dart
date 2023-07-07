@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../ui_features/widgets/text_button.dart';
 import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 import '../../../ui_features/widgets/button_primary.dart';
-import '../../../ui_features/widgets/filter/radio_custom.dart';
+import '../../widgets/filter/switch_custom.dart';
 import '../../../config/config.dart';
 import '../../widgets/filter/checkbox_custom.dart';
 import '../../widgets/filter/filter_combo.dart';
@@ -29,20 +30,17 @@ class _FilterPagesState extends State<FilterPages> {
     return Scaffold(
       appBar: AppBarPrimary(
         text: "Filter",
-        textStyle: AssetStyles.h3.copyWith(
-          color: AssetColors.inkDarkest,
-        ),
         actions: [
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              "Reset",
-              style: AssetStyles.h3.copyWith(
-                color: AssetColors.primaryColor,
-              ),
+          Container(
+            margin: const EdgeInsets.only(
+              top: 20,
+              right: 25,
+            ),
+            child: TextButtonCustom(
+              text: "Reset",
+              onTap: () {},
             ),
           ),
-          horizontalSpace(15),
         ],
       ),
       body: SafeArea(
@@ -69,7 +67,7 @@ class _FilterPagesState extends State<FilterPages> {
                     FilterComboBox(
                       title: "Condition",
                       subTitle: "",
-                      icon: AssetPaths.iconUp,
+                      isActive: isCondition,
                       onTap: () {
                         setState(() {
                           isCondition = !isCondition;
@@ -130,7 +128,7 @@ class _FilterPagesState extends State<FilterPages> {
                       thickness: 1,
                     ),
                     verticalSpace(10),
-                    RadioCustom(
+                    SwitchCustom(
                       text: "In Stock",
                       isChecked: isChecked[3],
                       onChange: (p0) {
@@ -144,7 +142,7 @@ class _FilterPagesState extends State<FilterPages> {
                       thickness: 1,
                     ),
                     verticalSpace(10),
-                    RadioCustom(
+                    SwitchCustom(
                       text: "Sale",
                       isChecked: isChecked[4],
                       onChange: (p0) {
@@ -163,7 +161,7 @@ class _FilterPagesState extends State<FilterPages> {
                     print("OK");
                   },
                   text: "Search",
-                  height: 50,
+                  width: screenWidth(context) * 0.9,
                 ),
               ),
             ],
