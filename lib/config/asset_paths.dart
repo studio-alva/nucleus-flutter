@@ -34,6 +34,7 @@ class AssetPaths {
   static const String imageModel = "assets/images/imgModel.png";
   static const String imageVidBig = "assets/images/bg_vid_big.png";
   static const String imageMVidSm = "assets/images/bg_vid_sm.png";
+  static const String imageMaps = "assets/images/Map.png";
 
   static const String iconIdn = "assets/icons/idn.png";
 

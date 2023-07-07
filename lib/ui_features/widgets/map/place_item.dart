@@ -40,7 +40,7 @@ class PlaceItem extends StatelessWidget {
                   children: [
                     Text(
                       places.title,
-                      style: AssetStyles.labelMdSmReg1,
+                      style: AssetStyles.labelSmReguler,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -49,8 +49,7 @@ class PlaceItem extends StatelessWidget {
                       places.subtitle,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: AssetStyles.labelMdMdReg.copyWith(
-                        color: AssetColors.inkDarkest,
+                      style: AssetStyles.labelMdRegular.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -60,39 +59,32 @@ class PlaceItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    child: Row(
-                      children: [
-                        Text(
-                          "\$${places.price}",
-                          style: AssetStyles.labelMdMdReg.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AssetColors.inkDarkest,
-                          ),
+                  RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: "\$${places.price}",
+                        style: AssetStyles.labelMdRegular.copyWith(
+                          fontWeight: FontWeight.bold,
                         ),
-                        Text(
-                          "/${places.time}",
-                          style: AssetStyles.labelMdSmReg1.copyWith(
-                            color: AssetColors.inkDarkest,
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      TextSpan(
+                        text: "/${places.time}",
+                        style: AssetStyles.labelSmReguler,
+                      ),
+                    ]),
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(AssetPaths.iconRating),
-                        horizontalSpace(5),
-                        Text(
-                          "${places.rating}",
-                          style: AssetStyles.labelMdMdReg.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AssetColors.inkDarkest,
-                          ),
+                  Row(
+                    children: [
+                      SvgPicture.asset(AssetPaths.iconRating),
+                      horizontalSpace(5),
+                      Text(
+                        "${places.rating}",
+                        style: AssetStyles.labelMdMdReg.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: AssetColors.inkDarkest,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),

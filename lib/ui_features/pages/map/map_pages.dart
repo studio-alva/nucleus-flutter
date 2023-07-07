@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:map/map.dart';
-import 'package:latlng/latlng.dart';
-import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/model/place_model.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_primary.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/map/place_item.dart';
+import '../../../config/config.dart';
+import '../../../ui_features/model/place_model.dart';
+import '../../../ui_features/widgets/appbar/appbar_primary.dart';
+import '../../../ui_features/widgets/map/place_item.dart';
 
 class MapPages extends StatefulWidget {
   const MapPages({super.key});
@@ -15,10 +13,6 @@ class MapPages extends StatefulWidget {
 }
 
 class _MapPagesState extends State<MapPages> {
-  final controller = MapController(
-    location: const LatLng(0, 0),
-    zoom: 2,
-  );
   List<Place> places = [
     Place(
       title: "Entire House",
@@ -55,7 +49,7 @@ class _MapPagesState extends State<MapPages> {
             height: screenHeight(context) * 0.8,
             child: const Image(
               image: AssetImage(
-                AssetPaths.imagePost,
+                AssetPaths.imageMaps,
               ),
               fit: BoxFit.cover,
             ),
