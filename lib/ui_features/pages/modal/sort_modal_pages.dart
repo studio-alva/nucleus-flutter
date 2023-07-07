@@ -7,7 +7,7 @@ class SortModalPages extends StatelessWidget {
   SortModalPages({super.key});
   static const String sortModalPages = "sortModalPages";
 
-  List<SortModel> sortData = [
+  final List<SortModel> sortData = [
     SortModel(name: "Custom", status: false),
     SortModel(name: "Relevance", status: true),
     SortModel(name: "Most Recent", status: false),
@@ -36,12 +36,12 @@ class SortModalPages extends StatelessWidget {
 }
 
 class ModalSortBody extends StatelessWidget {
-  ModalSortBody({
+  const ModalSortBody({
     super.key,
     required this.sm,
   });
 
-  List<SortModel> sm;
+  final List<SortModel> sm;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class ModalSortBody extends StatelessWidget {
         vertical: 40,
         horizontal: 20,
       ),
-      height: screenHeight(context) * 0.3,
+      height: screenHeight(context) * 0.35,
       decoration: const BoxDecoration(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,8 +60,8 @@ class ModalSortBody extends StatelessWidget {
             style: AssetStyles.h2,
           ),
           verticalSpace(20),
-          Container(
-            height: screenHeight(context) * 0.25,
+          SizedBox(
+            height: screenHeight(context) * 0.28,
             child: ListView.builder(
               itemCount: sm.length,
               itemBuilder: (context, index) => InkWell(
@@ -78,9 +78,7 @@ class ModalSortBody extends StatelessWidget {
                     children: [
                       Text(
                         sm[index].name,
-                        style: AssetStyles.labelMdMdReg.copyWith(
-                          color: AssetColors.inkDarkest,
-                        ),
+                        style: AssetStyles.labelMdRegular,
                       ),
                       sm[index].status
                           ? SvgPicture.asset(AssetPaths.iconCheck)
