@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../config/config.dart';
 
 class ButtonSettingItemNoIcon extends StatelessWidget {
-  String text;
-  Function()? onTap;
-  ButtonSettingItemNoIcon({
+  final String text;
+  final Function()? onTap;
+  const ButtonSettingItemNoIcon({
     super.key,
     required this.text,
     this.onTap,
@@ -19,9 +19,7 @@ class ButtonSettingItemNoIcon extends StatelessWidget {
         width: screenWidth(context),
         child: Text(
           text,
-          style: AssetStyles.labelMdMdReg.copyWith(
-            color: AssetColors.inkDarkest,
-          ),
+          style: AssetStyles.labelMdRegular,
         ),
       ),
     );

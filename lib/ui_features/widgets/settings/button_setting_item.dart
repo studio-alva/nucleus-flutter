@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../config/config.dart';
 
+// ignore: must_be_immutable
 class ButtonSetiingItem extends StatelessWidget {
-  String icon;
-  String text;
+  final String icon;
+  final String text;
   Function()? onTap;
   Widget? prefixIcon;
   ButtonSetiingItem({
@@ -32,9 +33,7 @@ class ButtonSetiingItem extends StatelessWidget {
             Expanded(
               child: Text(
                 text,
-                style: AssetStyles.labelMdMdReg.copyWith(
-                  color: AssetColors.inkDarkest,
-                ),
+                style: AssetStyles.labelMdRegular,
               ),
             ),
             prefixIcon!,
