@@ -4,12 +4,12 @@ import '../../../config/config.dart';
 import '../../model/chat_model.dart';
 
 class ChatReceiverItem extends StatelessWidget {
-  ChatReceiverItem({
+  const ChatReceiverItem({
     super.key,
     required this.data,
   });
 
-  ChatModel data;
+  final ChatModel data;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,12 @@ class ChatReceiverItem extends StatelessWidget {
       width: double.infinity,
       child: Row(
         children: [
-          Expanded(child: Container()),
+          const CircleAvatar(
+            backgroundImage: AssetImage(
+              AssetPaths.imageAvatar1,
+            ),
+          ),
+          horizontalSpace(10),
           (data.status == 1)
               ? Container(
                   padding: const EdgeInsets.symmetric(
@@ -31,25 +36,15 @@ class ChatReceiverItem extends StatelessWidget {
                   ),
                   child: Text(
                     data.message,
-                    style: AssetStyles.labelMdMdReg.copyWith(
-                      color: AssetColors.inkDarkest,
-                    ),
+                    style: AssetStyles.labelMdRegular,
                   ),
                 )
-              : Container(
-                  child: Text(
-                    "Typing...",
-                    style: AssetStyles.labelMdMdReg.copyWith(
-                      color: AssetColors.textGrey,
-                    ),
+              : Text(
+                  "Typing...",
+                  style: AssetStyles.labelMdMdReg.copyWith(
+                    color: AssetColors.textGrey,
                   ),
                 ),
-          horizontalSpace(10),
-          const CircleAvatar(
-            backgroundImage: AssetImage(
-              AssetPaths.imageAvatar1,
-            ),
-          ),
         ],
       ),
     );

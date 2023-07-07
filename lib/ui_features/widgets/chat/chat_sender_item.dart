@@ -4,12 +4,12 @@ import '../../../config/config.dart';
 import '../../model/chat_model.dart';
 
 class ChatSenderItem extends StatelessWidget {
-  ChatSenderItem({
+  const ChatSenderItem({
     super.key,
     required this.data,
   });
 
-  ChatModel data;
+  final ChatModel data;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,7 @@ class ChatSenderItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       child: Row(
         children: [
-          const CircleAvatar(
-            backgroundImage: AssetImage(
-              AssetPaths.imageAvatar1,
-            ),
-          ),
-          horizontalSpace(10),
+          const Spacer(),
           Container(
             padding: const EdgeInsets.symmetric(
               vertical: 10,
@@ -34,9 +29,15 @@ class ChatSenderItem extends StatelessWidget {
             ),
             child: Text(
               data.message,
-              style: AssetStyles.labelMdMdReg.copyWith(
+              style: AssetStyles.labelMdRegular.copyWith(
                 color: AssetColors.skyWhite,
               ),
+            ),
+          ),
+          horizontalSpace(10),
+          const CircleAvatar(
+            backgroundImage: AssetImage(
+              AssetPaths.imageAvatar1,
             ),
           ),
         ],

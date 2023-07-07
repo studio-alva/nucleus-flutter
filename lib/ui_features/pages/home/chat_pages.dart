@@ -12,9 +12,8 @@ import '../../widgets/chat/chat_sender_item.dart';
 class ChatPages extends StatelessWidget {
   ChatPages({super.key});
   static const String chatPages = "chatPages";
-  TextEditingController messgae = TextEditingController();
 
-  List<ChatModel> chat = [
+  final List<ChatModel> chat = [
     ChatModel(
       image: AssetPaths.imageAvatar1,
       tipe: "sender",
@@ -48,6 +47,7 @@ class ChatPages extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    TextEditingController messgae = TextEditingController();
     return Scaffold(
       appBar: AppBarSecondary(
         leading: TextButton(
@@ -71,27 +71,29 @@ class ChatPages extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              child: Container(
-                child:
-                    Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-                  const Text(
-                    "09:41 AM",
-                    style: AssetStyles.labelMdSmReg1,
+              child:
+                  Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Text(
+                  "09:41 AM",
+                  style: AssetStyles.labelSmReguler.copyWith(
+                    color: AssetColors.skyDark,
                   ),
-                  ...chat
-                      .map(
-                        (data) => (data.tipe == "sender")
-                            ? ChatSenderItem(
-                                data: data,
-                              )
-                            : ChatReceiverItem(
-                                data: data,
-                              ),
-                      )
-                      .toList(),
-                ]),
-              ),
+                ),
+                verticalSpace(20),
+                ...chat
+                    .map(
+                      (data) => (data.tipe == "sender")
+                          ? ChatSenderItem(
+                              data: data,
+                            )
+                          : ChatReceiverItem(
+                              data: data,
+                            ),
+                    )
+                    .toList(),
+              ]),
             ),
+            verticalSpace(10),
             InputCustom(
               controller: messgae,
               hintText: "Type Your Message",
