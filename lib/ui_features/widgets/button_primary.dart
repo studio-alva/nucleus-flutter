@@ -1,6 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+
 import '../../config/config.dart';
 
 // ignore: must_be_immutable
@@ -12,7 +11,7 @@ class ButtonPrimary extends StatelessWidget {
   final Color? color;
   final Function() onTap;
   final double? radius;
-  final Bool? disable;
+  final bool? disable;
   EdgeInsetsGeometry? padding;
   ButtonPrimary({
     Key? key,
