@@ -68,7 +68,7 @@ class GetStartedPages extends StatelessWidget {
                       ),
                       color: AssetColors.skyWhite,
                       onTap: () {
-                        nextScreen(OnboardingPages.onBoardingPages);
+                        nextScreenByName(OnboardingPages.onBoardingPages);
                       },
                     ),
                   ],

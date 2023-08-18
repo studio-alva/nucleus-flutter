@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
+import '../../../config/config.dart';
 import '../../../ui_features/pages/signin_signup/signin_pages_by_email.dart';
 import '../../../ui_features/widgets/button_primary.dart';
 import '../../../ui_features/widgets/input/flag_country_number.dart';
 import '../../../ui_features/widgets/text_button.dart';
-import '../../../config/config.dart';
 import '../../widgets/appbar/appbar_primary.dart';
 import '../../widgets/input/input_custom.dart';
 
@@ -68,7 +69,7 @@ class SignInPagesByNumber extends StatelessWidget {
             TextButtonCustom(
               text: "Use email, instead",
               onTap: () {
-                nextScreen(SigninPagesByEmail.signEmail);
+                nextScreenByName(SigninPagesByEmail.signEmail);
               },
             ),
             verticalSpace(30),

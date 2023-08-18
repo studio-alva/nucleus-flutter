@@ -1,27 +1,28 @@
 name: nucleus_ui_app
 description: A new Flutter project.
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
 
 dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.2
-  flutter_svg: ^2.0.5
-  faker: ^2.1.0
-  map: ^1.4.1
-  latlng: ^0.2.1
   cached_network_image: ^3.2.3
   carousel_slider: ^4.2.1
+  cupertino_icons: ^1.0.2
+  device_preview: ^1.1.0
+  faker: ^2.1.0
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.5
+  latlng: ^0.2.1
+  map: ^1.4.1
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
   flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true

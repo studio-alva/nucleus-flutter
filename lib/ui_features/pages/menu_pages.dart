@@ -16,15 +16,15 @@ class MenuHome extends StatelessWidget {
         margin: const EdgeInsets.all(20),
         child: ListView(
           children: [
-            ...halaman.map(
+            ...pages.map(
               (e) => Container(
                 margin: const EdgeInsets.only(bottom: 10),
                 child: ButtonPrimary(
                   height: 50,
                   onTap: () {
-                    nextScreen(e);
+                    nextScreen(e['page']);
                   },
-                  text: e,
+                  text: e['title'],
                 ),
               ),
             ),
