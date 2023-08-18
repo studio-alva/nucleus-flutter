@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/button_primary.dart';
+import 'package:nucleus_ui_app/ui_features/pages/signin_signup/signin_pages_by_email.dart';
+
 import '../../../config/config.dart';
+import '../../widgets/button_primary.dart';
 
 class OnboardingPages extends StatefulWidget {
   static const String onBoardingPages = "onBoardingPages";
@@ -59,7 +61,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
               ButtonPrimary(
                 text: "Create Account",
                 onTap: () {
-                  print("OK");
+                  nextScreen(SigninPagesByEmail());
                 },
               ),
               const SizedBox(
@@ -83,7 +85,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          print("Login");
+                          nextScreen(SigninPagesByEmail());
                         },
                     ),
                   ],

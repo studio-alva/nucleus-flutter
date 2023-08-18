@@ -50,7 +50,7 @@ class AppBarPrimary extends StatelessWidget implements PreferredSizeWidget {
                   if (onTapBack != null) {
                     onTapBack!();
                   } else {
-                    backScreen();
+                    backScreenUntil();
                   }
                 },
                 icon: SvgPicture.asset(

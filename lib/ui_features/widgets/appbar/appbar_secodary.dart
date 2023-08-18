@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/config/asset_colors.dart';
-import 'package:nucleus_ui_app/config/asset_paths.dart';
 
 class AppBarSecondary extends StatelessWidget implements PreferredSizeWidget {
   final Color? backgroundColor;
@@ -44,7 +42,7 @@ class AppBarSecondary extends StatelessWidget implements PreferredSizeWidget {
                   if (onTapBack != null) {
                     onTapBack!();
                   } else {
-                    backScreen();
+                    backScreenUntil();
                   }
                 },
                 icon: SvgPicture.asset(

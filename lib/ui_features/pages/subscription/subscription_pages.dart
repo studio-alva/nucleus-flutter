@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+
 import '../../../config/config.dart';
 import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 import '../../../ui_features/widgets/button_primary.dart';
@@ -18,7 +19,8 @@ class SubScriptionPages extends StatelessWidget {
         actions: [
           Container(
             margin: const EdgeInsets.only(top: 15, right: 20),
-            child: TextButtonCustom(text: "Skip", onTap: () {}),
+            child:
+                TextButtonCustom(text: "Skip", onTap: () => backScreenUntil()),
           ),
         ],
       ),
@@ -50,15 +52,8 @@ class SubScriptionPages extends StatelessWidget {
               aspectRatio: 1.1,
               enableInfiniteScroll: false,
             ),
-            items: [
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: AssetColors.skyWhite,
-                ),
-              ),
-              Container(
+            items: [1, 2, 3].map((e) {
+              return Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -104,15 +99,8 @@ class SubScriptionPages extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: AssetColors.skyWhite,
-                ),
-              ),
-            ],
+              );
+            }).toList(),
           ),
           verticalSpace(20),
           Container(

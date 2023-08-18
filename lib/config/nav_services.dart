@@ -11,7 +11,13 @@ Future nextScreenByName(String screen) async {
 
 Future nextScreen(Widget screen) async {
   return await Navigator.push(
-      navKey.currentContext!, MaterialPageRoute(builder: (_) => screen));
+    navKey.currentContext!,
+    MaterialPageRoute(builder: (_) => screen),
+  );
+}
+
+void backScreenUntil([dynamic res]) {
+  Navigator.popUntil(navKey.currentContext!, (route) => route.isFirst);
 }
 
 void backScreen([dynamic res]) {

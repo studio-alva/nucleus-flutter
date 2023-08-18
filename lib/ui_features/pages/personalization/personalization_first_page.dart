@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../config/config.dart';
 import '../../../ui_features/model/sort_model.dart';
 import '../../../ui_features/widgets/appbar/appbar_secodary.dart';
@@ -6,25 +7,30 @@ import '../../../ui_features/widgets/button_primary.dart';
 import '../../widgets/input/select_item.dart';
 import '../../widgets/text_button.dart';
 
-class PersonalizationFirstPage extends StatelessWidget {
+class PersonalizationFirstPage extends StatefulWidget {
   static const String personalizationFirstPage = "personalizationFirstPage";
   const PersonalizationFirstPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    List<SortModel> pilihan = [
-      SortModel(name: "None", status: true),
-      SortModel(name: "Core Strength", status: false),
-      SortModel(name: "Chest", status: false),
-      SortModel(name: "Shoulder", status: false),
-      SortModel(name: "Backbends", status: false),
-      SortModel(name: "Traps", status: false),
-      SortModel(name: "Forearms", status: false),
-      SortModel(name: "Hamstring", status: false),
-      SortModel(name: "Upper Back", status: false),
-      SortModel(name: "Lower Back", status: false),
-    ];
+  State<PersonalizationFirstPage> createState() =>
+      _PersonalizationFirstPageState();
+}
 
+class _PersonalizationFirstPageState extends State<PersonalizationFirstPage> {
+  List<SortModel> pilihan = [
+    SortModel(name: "None", status: true),
+    SortModel(name: "Core Strength", status: false),
+    SortModel(name: "Chest", status: false),
+    SortModel(name: "Shoulder", status: false),
+    SortModel(name: "Backbends", status: false),
+    SortModel(name: "Traps", status: false),
+    SortModel(name: "Forearms", status: false),
+    SortModel(name: "Hamstring", status: false),
+    SortModel(name: "Upper Back", status: false),
+    SortModel(name: "Lower Back", status: false),
+  ];
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarSecondary(
         center: Row(
@@ -54,7 +60,7 @@ class PersonalizationFirstPage extends StatelessWidget {
                 color: AssetColors.skyDark,
                 fontWeight: FontWeight.w500,
               ),
-              onTap: () {},
+              onTap: () => backScreenUntil(),
             ),
           ),
         ],
@@ -76,18 +82,21 @@ class PersonalizationFirstPage extends StatelessWidget {
             Flexible(
               child: Container(
                 margin: const EdgeInsets.only(top: 10),
-                child: ListView(
-                  children: [
-                    ...pilihan.map(
-                      (e) => SelectItem(
-                        text: e.name,
-                        isActive: e.status,
-                        onTap: () {
-                          print(e.name);
-                        },
-                      ),
-                    ),
-                  ],
+                child: ListView.builder(
+                  itemCount: pilihan.length,
+                  itemBuilder: (contex, index) {
+                    final data = pilihan[index];
+                    return SelectItem(
+                      text: data.name,
+                      isActive: data.status,
+                      onTap: () {
+                        final index =
+                            pilihan.indexWhere((a) => a.name == data.name);
+                        pilihan[index].status = !pilihan[index].status;
+                        setState(() {});
+                      },
+                    );
+                  },
                 ),
               ),
             ),
