@@ -22,7 +22,7 @@ class MenuHome extends StatelessWidget {
                 child: ButtonPrimary(
                   height: 50,
                   onTap: () {
-                    nextScreen(e['page']);
+                    nextScreenByName(e['title']);
                   },
                   text: e['title'],
                 ),
