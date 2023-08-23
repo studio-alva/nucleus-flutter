@@ -82,6 +82,7 @@ class _MainHomePagesState extends State<MainHomePages> {
 
   int selectedLabel = 0;
   int idPost = 0;
+  int? selectedChip;
 
   @override
   Widget build(BuildContext context) {
@@ -99,19 +100,23 @@ class _MainHomePagesState extends State<MainHomePages> {
                     const GreetingHeader(),
                     verticalSpace(15),
                     const Divider(
-                      height: 0.5,
+                      height: 1,
+                      color: Colors.black,
                     ),
                     verticalSpace(20),
                     Container(
                       margin: const EdgeInsets.only(right: 20, left: 20),
-                      height: 50,
+                      height: 35,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: labelMenu.length,
                         itemBuilder: (context, index) => GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            selectedChip = index;
+                            setState(() {});
+                          },
                           child: SelectItem1(
-                            isActive: labelMenu[index].status,
+                            isActive: selectedChip == index,
                             text: labelMenu[index].name,
                             margin: const EdgeInsets.symmetric(horizontal: 5),
                             bgSecond: AssetColors.skyLighter,

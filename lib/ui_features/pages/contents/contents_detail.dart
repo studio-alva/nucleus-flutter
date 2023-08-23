@@ -48,9 +48,9 @@ class ContentDetailPages extends StatelessWidget {
                           ),
                         ),
                         verticalSpace(40),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
+                          children: [
                             DetailRow(
                               title: "15 Minutes",
                               subTitle: "Duration",

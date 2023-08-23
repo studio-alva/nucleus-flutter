@@ -30,8 +30,10 @@ class SelectItem1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        padding:
-            padding ?? const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+        ),
+        alignment: Alignment.center,
         margin: margin ?? const EdgeInsets.only(bottom: 20),
         decoration: BoxDecoration(
           color: isActive!

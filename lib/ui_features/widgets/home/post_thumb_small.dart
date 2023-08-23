@@ -11,44 +11,49 @@ class PostThumbSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(data.imgThumb),
-              fit: BoxFit.cover,
+    return Material(
+      child: InkWell(
+        onTap: () {},
+        child: Row(
+          children: [
+            Container(
+              width: 80,
+              height: 80,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(data.imgThumb),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
-        ),
-        horizontalSpace(20),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                data.title,
-                style: AssetStyles.labelSmReguler.copyWith(
-                  fontWeight: FontWeight.w700,
-                  height: 1.5,
-                ),
-                maxLines: 2,
+            horizontalSpace(20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    data.title,
+                    style: AssetStyles.labelSmReguler.copyWith(
+                      fontWeight: FontWeight.w700,
+                      height: 1.5,
+                    ),
+                    maxLines: 2,
+                  ),
+                  verticalSpace(10),
+                  Text(
+                    "${data.time} · by ${data.authors}",
+                    style: AssetStyles.labelTinyReguler.copyWith(
+                      color: AssetColors.inkLight,
+                    ),
+                    maxLines: 1,
+                  ),
+                ],
               ),
-              verticalSpace(10),
-              Text(
-                "${data.time} · by ${data.authors}",
-                style: AssetStyles.labelTinyReguler.copyWith(
-                  color: AssetColors.inkLight,
-                ),
-                maxLines: 1,
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

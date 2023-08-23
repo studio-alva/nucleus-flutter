@@ -12,11 +12,14 @@ class InputCustom extends StatelessWidget {
   final FocusNode? focusNode;
   final EdgeInsetsGeometry? contentPadding;
   final TextStyle? textStyle;
+  final bool filled, borderless;
+  final Color? fillColor;
 
   const InputCustom({
     super.key,
     required this.controller,
     this.prefixIcon,
+    this.borderless = false,
     this.inputType = TextInputType.text,
     this.label,
     this.hintText = "Input Number",
@@ -25,6 +28,8 @@ class InputCustom extends StatelessWidget {
     this.contentPadding,
     this.suffixIcon,
     this.textStyle,
+    this.fillColor,
+    this.filled = false,
   });
 
   @override
@@ -32,9 +37,18 @@ class InputCustom extends StatelessWidget {
     return TextField(
       controller: controller,
       decoration: InputDecoration(
+        filled: filled,
+        fillColor: fillColor,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
+        enabledBorder: borderless
+            ? const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.transparent,
+                ),
+              )
+            : null,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintStyle: AssetStyles.labelMdMdReg,

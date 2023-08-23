@@ -5,6 +5,9 @@ class AssetPaths {
   static const String imageThumb1 = "assets/images/thumb1.png";
   static const String imageAvatar1 = "assets/images/avatar1.png";
 
+  static const String gradientBackground =
+      "assets/images/gradient-background.png";
+
   static const String imagePost1 = "assets/images/post1.png";
   static const String imagePost2 = "assets/images/post2.png";
   static const String imagePost3 = "assets/images/post3.png";

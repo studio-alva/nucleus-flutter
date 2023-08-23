@@ -19,35 +19,41 @@ class ThumbnailImg1 extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 10),
       width: width,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: double.infinity,
-            height: width! * 0.9,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(data["images"]!),
-                fit: BoxFit.cover,
+      child: Material(
+        child: InkWell(
+          onTap: () {},
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: double.infinity,
+                height: width! * 0.9,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  image: DecorationImage(
+                    image: AssetImage(data["images"]!),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
+              verticalSpace(10),
+              Text(
+                data["title"]!,
+                style: AssetStyles.labelMdRegular
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+              verticalSpace(10),
+              Text(
+                data["desc"]!,
+                style: AssetStyles.labelTinyReguler.copyWith(
+                  fontWeight: FontWeight.normal,
+                  color: AssetColors.inkLight,
+                ),
+                maxLines: 2,
+              ),
+            ],
           ),
-          verticalSpace(10),
-          Text(
-            data["title"]!,
-            style: AssetStyles.labelMdRegular
-                .copyWith(fontWeight: FontWeight.bold),
-          ),
-          verticalSpace(10),
-          Text(
-            data["desc"]!,
-            style: AssetStyles.labelTinyReguler.copyWith(
-              fontWeight: FontWeight.normal,
-              color: AssetColors.inkLight,
-            ),
-            maxLines: 2,
-          ),
-        ],
+        ),
       ),
     );
   }

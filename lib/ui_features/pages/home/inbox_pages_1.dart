@@ -91,7 +91,7 @@ class InboxPages1 extends StatelessWidget {
                       ),
                       ButtonPrimary(
                         onTap: () {},
-                        text: "WRITE",
+                        text: "Write",
                         width: 80,
                         height: 40,
                       ),

@@ -61,4 +61,7 @@ class AssetColors {
   static const Color textGrey = Color(0XFFAFBCCB);
 
   static const Color bgHighLight = Color(0XFFECF0F3);
+
+  static const Color pinkLightColor = Color.fromRGBO(255, 0, 123, 1);
+  static const Color cyanColor = Color.fromRGBO(0, 161, 255, 1);
 }

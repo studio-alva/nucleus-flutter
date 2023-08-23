@@ -19,25 +19,30 @@ class ThumbnailImg extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 10),
       width: width,
-      child: Column(
-        children: [
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(hits["images"]!),
-                  fit: BoxFit.contain,
+      child: Material(
+        child: InkWell(
+          onTap: () {},
+          child: Column(
+            children: [
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(hits["images"]!),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
               ),
-            ),
+              verticalSpace(10),
+              Text(
+                hits["title"]!,
+                style: AssetStyles.labelSmReguler
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
-          verticalSpace(10),
-          Text(
-            hits["title"]!,
-            style: AssetStyles.labelSmReguler
-                .copyWith(fontWeight: FontWeight.bold),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -27,7 +27,7 @@ class _PersonalizationSeconPagesState extends State<PersonalizationSeconPages>
     currenStep = 1;
     stepWidget = [
       StepFirstPerson(),
-      StepTwoPerson(),
+      const StepTwoPerson(),
     ];
 
     maxStep = stepWidget.length;
@@ -47,47 +47,62 @@ class _PersonalizationSeconPagesState extends State<PersonalizationSeconPages>
     );
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: const AppBarPrimary(),
       body: SafeArea(
-        child: Container(
-          margin: const EdgeInsets.fromLTRB(30, 0, 30, 30),
-          child: Column(
-            children: [
-              LayoutBuilder(
-                builder: (context, constraint) {
-                  double step = constraint.maxWidth / maxStep;
-
-                  return Stack(
-                    children: [
-                      Container(
-                        width: constraint.maxWidth,
-                        height: 5,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: AssetColors.skyLight,
-                        ),
-                      ),
-                      Container(
-                        width: step * currenStep,
-                        height: 5,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: AssetColors.primaryBase,
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
-              Expanded(
-                child: TabBarView(
-                  controller: _tabController,
-                  children: stepWidget,
+        bottom: false,
+        child: Stack(
+          children: [
+            if (currenStep == 1)
+              Positioned(
+                bottom: -80,
+                child: Image.asset(
+                  AssetPaths.gradientBackground,
+                  width: screenWidth(context),
+                  alignment: Alignment.topLeft,
+                  fit: BoxFit.cover,
                 ),
               ),
-              //Indicator
-            ],
-          ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              child: Column(
+                children: [
+                  LayoutBuilder(
+                    builder: (context, constraint) {
+                      double step = constraint.maxWidth / maxStep;
+
+                      return Stack(
+                        children: [
+                          Container(
+                            width: constraint.maxWidth,
+                            height: 5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: AssetColors.skyLight,
+                            ),
+                          ),
+                          Container(
+                            width: step * currenStep,
+                            height: 5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: AssetColors.primaryBase,
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                  Expanded(
+                    child: TabBarView(
+                      controller: _tabController,
+                      children: stepWidget,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

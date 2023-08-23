@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nucleus_ui_app/config/config.dart';
-import 'package:nucleus_ui_app/ui_features/widgets/appbar/appbar_secodary.dart';
 import 'package:nucleus_ui_app/ui_features/widgets/home/thumbnail_img_1.dart';
 
 import '../../widgets/home/thumbnail_img.dart';
@@ -64,14 +63,18 @@ class HomePages1 extends StatelessWidget {
                 verticalSpace(20),
                 SizedBox(
                   width: screenWidth(context),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       Text(
                         "Good Morning!",
                         style: AssetStyles.t3,
                       ),
-                      CircleAvatar(),
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          "https://www.tripsavvy.com/thmb/qFqPcg6Wo24Hu4fLokNfAZdC-xQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/fuji-mountain-in-autumn-822273028-5a6a8a9c3418c600363958d3.jpg",
+                        ),
+                      ),
                     ],
                   ),
                 ),

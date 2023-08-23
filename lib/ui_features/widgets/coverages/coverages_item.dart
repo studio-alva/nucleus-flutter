@@ -32,9 +32,11 @@ class CoveragesItem extends StatelessWidget {
                         ),
                       ),
                       horizontalSpace(10),
-                      Text(
-                        data["organization"]!,
-                        style: AssetStyles.labelSmReguler,
+                      Flexible(
+                        child: Text(
+                          data["organization"]!,
+                          style: AssetStyles.labelSmReguler,
+                        ),
                       ),
                     ],
                   ),
@@ -49,10 +51,11 @@ class CoveragesItem extends StatelessWidget {
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
+            horizontalSpace(25),
             Container(
               width: 100,
               height: 100,
@@ -105,11 +108,11 @@ class CoveragesItem extends StatelessWidget {
                 ],
               )
             : Container(),
-        verticalSpace(10),
+        verticalSpace(24),
         const Divider(
           height: 0.5,
         ),
-        verticalSpace(40),
+        verticalSpace(24),
       ],
     );
   }

@@ -14,10 +14,13 @@ class LocationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(10),
       onTap: () {},
       child: Container(
         width: screenWidth(context),
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(
+          vertical: 20,
+        ),
         child: Row(
           children: [
             SvgPicture.asset(AssetPaths.iconPlace),
@@ -38,7 +41,7 @@ class LocationItem extends StatelessWidget {
                 ),
                 verticalSpace(10),
                 Container(
-                  width: screenWidth(context) * 0.7,
+                  width: screenWidth(context) * 0.8,
                   height: 2,
                   color: AssetColors.skyLight,
                 )

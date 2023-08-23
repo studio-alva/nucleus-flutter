@@ -18,20 +18,25 @@ class ButtonIconRounded extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color,
-          border: Border.all(
-            color: AssetColors.inkDarkest.withOpacity(0.2),
-          ),
+    return Container(
+      width: width,
+      height: height,
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: color,
+        border: Border.all(
+          color: AssetColors.inkDarkest.withOpacity(0.2),
         ),
-        child: Center(
-          child: SvgPicture.asset(icon),
+      ),
+      child: Material(
+        clipBehavior: Clip.none,
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          child: Center(
+            child: SvgPicture.asset(icon),
+          ),
         ),
       ),
     );

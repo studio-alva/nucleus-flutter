@@ -19,6 +19,9 @@ class AppBarChat extends StatelessWidget {
           child: InputCustom(
             controller: search,
             hintText: "Search Email",
+            filled: true,
+            borderless: true,
+            fillColor: AssetColors.skyLighter,
             contentPadding: const EdgeInsetsDirectional.symmetric(vertical: 5),
             prefixIcon: SvgPicture.asset(
               AssetPaths.iconSearch,
