@@ -15,19 +15,18 @@ class VerificationPages extends StatelessWidget {
     TextEditingController v2 = TextEditingController();
     TextEditingController v3 = TextEditingController();
     TextEditingController v4 = TextEditingController();
+    List<FocusNode> listFocus = [
+      FocusNode(),
+      FocusNode(),
+      FocusNode(),
+      FocusNode(),
+    ];
 
     List<TextEditingController> controller = [
       v1,
       v2,
       v3,
       v4,
-    ];
-
-    List<bool> active = [
-      false,
-      false,
-      false,
-      true,
     ];
 
     return Scaffold(
@@ -83,7 +82,7 @@ class VerificationPages extends StatelessWidget {
                         edgeInsetsGeometry: const EdgeInsets.symmetric(
                           horizontal: 10,
                         ),
-                        isActive: active[e],
+                        focusNode: listFocus[e],
                         controller: controller[e],
                       );
                     }).toList(),
