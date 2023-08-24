@@ -42,6 +42,7 @@ class StepTwoPerson extends StatelessWidget {
           onTap: () {},
           text: "Continue",
         ),
+        verticalSpace(20),
       ],
     );
   }

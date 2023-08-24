@@ -49,6 +49,10 @@ class _StepFirstPersonState extends State<StepFirstPerson> {
             child: SelectItem1(
               text: e.name,
               isActive: value == e.name,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
             ),
           ),
       ],

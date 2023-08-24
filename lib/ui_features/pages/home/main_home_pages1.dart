@@ -116,6 +116,7 @@ class _MainHomePagesState extends State<MainHomePages> {
                             setState(() {});
                           },
                           child: SelectItem1(
+                            alignment: Alignment.center,
                             isActive: selectedChip == index,
                             text: labelMenu[index].name,
                             margin: const EdgeInsets.symmetric(horizontal: 5),
