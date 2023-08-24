@@ -7,7 +7,7 @@ import 'app/app.dart';
 void main(List<String> args) {
   runApp(
     DevicePreview(
-      enabled: kReleaseMode,
+      enabled: kIsWeb,
       builder: (BuildContext context) => const App(),
     ),
   );
