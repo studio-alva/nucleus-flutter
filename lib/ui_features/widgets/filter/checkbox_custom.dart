@@ -26,7 +26,17 @@ class CheckBoxCustom extends StatelessWidget {
         SizedBox(
           width: 25,
           height: 25,
-          child: Checkbox(value: isChecked, onChanged: onChange),
+          child: Checkbox(
+            value: isChecked,
+            onChanged: onChange,
+            side: const BorderSide(
+              color: AssetColors.skyBase,
+            ),
+            activeColor: AssetColors.primaryBase,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4),
+            ),
+          ),
         )
       ],
     );

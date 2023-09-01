@@ -9,7 +9,7 @@ class HeaderSettingItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: AssetColors.skyLight,
+        color: AssetColors.skyLightest,
       ),
       padding: const EdgeInsets.only(
         top: 30,

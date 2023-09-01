@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import '../../../config/config.dart';
 
 class SwitchCustom extends StatelessWidget {
@@ -21,12 +21,18 @@ class SwitchCustom extends StatelessWidget {
       children: [
         Text(
           text!,
-          style: AssetStyles.labelMdRegular,
+          style: AssetStyles.labelMdRegular.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(
           width: 25,
           height: 25,
-          child: Switch(value: isChecked, onChanged: onChange),
+          child: CupertinoSwitch(
+            value: isChecked,
+            onChanged: onChange,
+            activeColor: AssetColors.primaryBase,
+          ),
         )
       ],
     );

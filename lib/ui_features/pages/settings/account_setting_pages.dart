@@ -49,7 +49,7 @@ class AccountSettingPages extends StatelessWidget {
                       ],
                     ),
                   ),
-                  verticalSpace(20),
+                  verticalSpace(32),
                   Text(
                     "Account",
                     style: AssetStyles.labelLgRegular.copyWith(

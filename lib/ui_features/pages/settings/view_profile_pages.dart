@@ -22,6 +22,7 @@ class ViewProfilePages extends StatelessWidget {
       NavbarModel(icon: "", title: "title", status: false),
     ];
     return Scaffold(
+      backgroundColor: AssetColors.skyWhite,
       appBar: const AppBarPrimary(
         text: "My Details",
       ),

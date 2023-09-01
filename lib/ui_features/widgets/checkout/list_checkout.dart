@@ -4,9 +4,11 @@ import '../../../config/config.dart';
 class ListCheckout extends StatelessWidget {
   final String leftText;
   final String rightText;
+  final TextStyle? stlyeRightText;
   const ListCheckout({
     super.key,
     required this.leftText,
+    this.stlyeRightText,
     required this.rightText,
   });
 
@@ -23,9 +25,10 @@ class ListCheckout extends StatelessWidget {
         ),
         Text(
           rightText,
-          style: AssetStyles.labelMdRegular.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
+          style: stlyeRightText ??
+              AssetStyles.labelMdRegular.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
         ),
       ],
     );

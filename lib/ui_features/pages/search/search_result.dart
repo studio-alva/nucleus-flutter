@@ -51,6 +51,10 @@ class SearchResultPgaes extends StatelessWidget {
                         AssetPaths.iconSearch,
                         fit: BoxFit.scaleDown,
                       ),
+                      radius: 10,
+                      filled: true,
+                      borderless: true,
+                      fillColor: AssetColors.skyLighter,
                       suffixIcon: SvgPicture.asset(
                         AssetPaths.iconClose,
                         fit: BoxFit.scaleDown,

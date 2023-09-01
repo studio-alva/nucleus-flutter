@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:nucleus_ui_app/config/asset_colors.dart';
 
 class IndicatorImageProduct extends StatelessWidget {
   const IndicatorImageProduct({
@@ -29,10 +30,15 @@ class IndicatorImageProduct extends StatelessWidget {
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
+                border: current != entry.key
+                    ? Border.all(
+                        color: AssetColors.inkDarkest,
+                      )
+                    : null,
                 color: (Theme.of(context).brightness == Brightness.dark
-                        ? Colors.red
-                        : Colors.red)
-                    .withOpacity(current == entry.key ? 1 : 0.4),
+                        ? AssetColors.inkDarkest
+                        : AssetColors.inkDarkest)
+                    .withOpacity(current == entry.key ? 1 : 0),
               ),
             ),
           );

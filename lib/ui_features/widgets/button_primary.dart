@@ -28,24 +28,29 @@ class ButtonPrimary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        height: height ?? 50,
-        width: width ?? 170,
-        padding: padding,
-        decoration: BoxDecoration(
+    return Container(
+      height: height ?? 50,
+      width: width ?? 170,
+      padding: padding,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(radius!),
+        color: color ?? AssetColors.primaryBase,
+      ),
+      child: Material(
+        borderRadius: BorderRadius.circular(radius!),
+        color: color ?? AssetColors.primaryBase,
+        child: InkWell(
           borderRadius: BorderRadius.circular(radius!),
-          color: color ?? AssetColors.primaryBase,
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: style ??
-                AssetStyles.labelMdRegular.copyWith(
-                  color: AssetColors.skyWhite,
-                  fontWeight: FontWeight.w500,
-                ),
+          onTap: onTap,
+          child: Center(
+            child: Text(
+              text,
+              style: style ??
+                  AssetStyles.labelMdRegular.copyWith(
+                    color: AssetColors.skyWhite,
+                    fontWeight: FontWeight.w500,
+                  ),
+            ),
           ),
         ),
       ),

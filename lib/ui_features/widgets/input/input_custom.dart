@@ -14,6 +14,7 @@ class InputCustom extends StatelessWidget {
   final TextStyle? textStyle;
   final bool filled, borderless;
   final Color? fillColor;
+  final double radius;
 
   const InputCustom({
     super.key,
@@ -30,6 +31,7 @@ class InputCustom extends StatelessWidget {
     this.textStyle,
     this.fillColor,
     this.filled = false,
+    this.radius = 10,
   });
 
   @override
@@ -40,15 +42,14 @@ class InputCustom extends StatelessWidget {
         filled: filled,
         fillColor: fillColor,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(radius),
         ),
-        enabledBorder: borderless
-            ? const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                ),
-              )
-            : null,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: borderless ? Colors.transparent : Colors.black,
+          ),
+          borderRadius: BorderRadius.circular(radius),
+        ),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintStyle: AssetStyles.labelMdMdReg,

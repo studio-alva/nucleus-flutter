@@ -14,7 +14,8 @@ class ButtonSettingItemNoIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: SizedBox(
+      child: Container(
+        alignment: Alignment.centerLeft,
         height: 50,
         width: screenWidth(context),
         child: Text(

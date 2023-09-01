@@ -71,9 +71,11 @@ class AddToCartPages extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Nike React Infinity Run\nFlyknit 2",
-                            style: AssetStyles.t3,
+                            style: AssetStyles.t3.copyWith(
+                              height: 1.4,
+                            ),
                           ),
                           verticalSpace(15),
                           const Text(
