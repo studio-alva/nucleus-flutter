@@ -25,7 +25,7 @@ class ChatSenderItem extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Colors.blue,
+              color: AssetColors.primaryBase,
             ),
             child: Text(
               data.message,

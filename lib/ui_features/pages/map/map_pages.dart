@@ -1,8 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nucleus_ui_app/ui_features/widgets/chip/primary_chip.dart';
 import '../../../config/config.dart';
 import '../../../ui_features/model/place_model.dart';
-import '../../../ui_features/widgets/appbar/appbar_primary.dart';
 import '../../../ui_features/widgets/map/place_item.dart';
 
 class MapPages extends StatefulWidget {
@@ -54,10 +56,48 @@ class _MapPagesState extends State<MapPages> {
               fit: BoxFit.cover,
             ),
           ),
-          AppBarPrimary(
-            leading: SvgPicture.asset(
-              AssetPaths.iconClose,
-              fit: BoxFit.scaleDown,
+          SizedBox(
+            height: screenHeight(context),
+            width: screenWidth(context),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                SizedBox(
+                  height: screenHeight(context),
+                  width: screenWidth(context),
+                ),
+                for (var i in [
+                  "\$125",
+                  "\$150",
+                  "\$160",
+                  "\$180",
+                  "\$240",
+                  "\$320",
+                  "\$250",
+                  "\$140",
+                  "\$190",
+                  "\$290",
+                ])
+                  Positioned(
+                    top: 60 + (Random().nextDouble() * 256),
+                    left: Random().nextDouble() * 256,
+                    child: PrimaryChip(
+                      label: i,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: paddingTopApp(context),
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                AssetPaths.iconClose,
+                fit: BoxFit.scaleDown,
+              ),
             ),
           ),
           Align(

@@ -16,46 +16,46 @@ class CheckOutItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title!,
-                style: AssetStyles.labelMdRegular,
-              ),
-              verticalSpace(5),
-              Text(
-                subTitle!,
-                style: AssetStyles.labelSmReguler.copyWith(
-                  color: AssetColors.inkLighter,
-                ),
-              ),
-            ],
-          ),
-          TextButtonCustom(
-            text: "Edit",
-            onTap: onTap,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 10,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title!,
+              style: AssetStyles.labelMdRegular,
             ),
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 1,
-                color: AssetColors.primaryColor,
-              ),
-              borderRadius: BorderRadius.circular(
-                20,
+            verticalSpace(5),
+            Text(
+              subTitle!,
+              style: AssetStyles.labelSmReguler.copyWith(
+                color: AssetColors.inkLighter,
               ),
             ),
+          ],
+        ),
+        TextButtonCustom(
+          text: "Edit",
+          borderRadius: BorderRadius.circular(
+            20,
           ),
-        ],
-      ),
+          onTap: onTap,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 10,
+          ),
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 1,
+              color: AssetColors.primaryColor,
+            ),
+            borderRadius: BorderRadius.circular(
+              20,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

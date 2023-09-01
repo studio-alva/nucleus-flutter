@@ -24,6 +24,12 @@ class FilterModalPages extends StatelessWidget {
           onPressed: () {
             showModalBottomSheet(
               context: context,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
+                ),
+              ),
               builder: (context) => ModalFilterBody(
                 sm: sortData,
               ),
@@ -47,59 +53,87 @@ class ModalFilterBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(
-        vertical: 40,
-        horizontal: 20,
-      ),
-      height: screenHeight(context) * 0.5,
+      height: screenHeight(context) * 0.55,
       decoration: const BoxDecoration(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          const Text(
-            "Filter",
-            style: AssetStyles.h2,
-          ),
-          verticalSpace(20),
-          SizedBox(
-            height: screenHeight(context) * 0.25,
-            child: ListView.builder(
-              itemCount: sm.length,
-              itemBuilder: (context, index) => InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: const EdgeInsets.only(
-                    right: 20,
-                  ),
-                  margin: const EdgeInsets.only(bottom: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        sm[index].name,
-                        style: AssetStyles.labelMdRegular,
-                      ),
-                      Checkbox(value: sm[index].status, onChanged: (vale) {}),
-                    ],
-                  ),
-                ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              width: 48,
+              height: 5,
+              margin: const EdgeInsets.only(top: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: AssetColors.skyBase,
               ),
             ),
           ),
-          verticalSpace(20),
-          ButtonPrimary(
-            onTap: () {},
-            text: "Show 340 Result",
-            height: 40,
-            width: screenWidth(context) * 0.9,
-          ),
-          verticalSpace(20),
-          Center(
-            child: TextButtonCustom(
-              text: "Reset",
-              style: AssetStyles.labelMdRegular
-                  .copyWith(color: AssetColors.inkDarkest),
-              onTap: () {},
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 40,
+              horizontal: 20,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  "Filter",
+                  style: AssetStyles.h2,
+                ),
+                verticalSpace(20),
+                SizedBox(
+                  height: screenHeight(context) * 0.25,
+                  child: ListView.builder(
+                    itemCount: sm.length,
+                    itemBuilder: (context, index) => InkWell(
+                      onTap: () {},
+                      child: Container(
+                        padding: const EdgeInsets.only(
+                          right: 20,
+                        ),
+                        margin: const EdgeInsets.only(bottom: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              sm[index].name,
+                              style: AssetStyles.labelMdRegular,
+                            ),
+                            Checkbox(
+                              value: sm[index].status,
+                              onChanged: (vale) {},
+                              side: const BorderSide(
+                                color: AssetColors.skyBase,
+                              ),
+                              activeColor: AssetColors.primaryBase,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                verticalSpace(20),
+                ButtonPrimary(
+                  onTap: () {},
+                  text: "Show 340 Result",
+                  height: 40,
+                  width: screenWidth(context) * 0.9,
+                ),
+                verticalSpace(20),
+                Center(
+                  child: TextButtonCustom(
+                    text: "Reset",
+                    style: AssetStyles.labelMdRegular
+                        .copyWith(color: AssetColors.inkDarkest),
+                    onTap: () {},
+                  ),
+                ),
+              ],
             ),
           ),
         ],

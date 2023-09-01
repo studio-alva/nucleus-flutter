@@ -50,13 +50,17 @@ class SearchPages extends StatelessWidget {
                   AssetPaths.iconSearch,
                   fit: BoxFit.scaleDown,
                 ),
+                radius: 10,
+                filled: true,
+                fillColor: AssetColors.skyLighter,
                 suffixIcon: SvgPicture.asset(
                   AssetPaths.iconVoice,
                   fit: BoxFit.scaleDown,
                 ),
+                borderless: true,
                 hintText: "Search",
               ),
-              verticalSpace(20),
+              verticalSpace(24),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(

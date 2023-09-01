@@ -8,10 +8,12 @@ class TextButtonCustom extends StatelessWidget {
   final BoxDecoration? decoration;
   final EdgeInsetsGeometry? padding;
   TextStyle? style;
+  final BorderRadius? borderRadius;
   TextButtonCustom({
     super.key,
     required this.text,
     required this.onTap,
+    this.borderRadius,
     this.decoration,
     this.padding,
     this.style,
@@ -21,6 +23,7 @@ class TextButtonCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      borderRadius: borderRadius,
       child: Container(
         padding: padding,
         decoration: decoration,

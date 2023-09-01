@@ -54,7 +54,10 @@ class SubScriptionPages extends StatelessWidget {
             ),
             items: [1, 2, 3].map((e) {
               return Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 30,
+                ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: AssetColors.skyWhite,
@@ -93,7 +96,11 @@ class SubScriptionPages extends StatelessWidget {
                     ),
                     verticalSpace(20),
                     ButtonPrimary(
-                      onTap: () {},
+                      onTap: () {
+                        print("asd");
+                      },
+                      width: screenWidth(context),
+                      color: AssetColors.primaryBase,
                       text: "Subscribe",
                       height: 50,
                     ),

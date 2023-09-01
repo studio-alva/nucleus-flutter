@@ -104,93 +104,110 @@ class _ProductDetailPagesState extends State<ProductDetailPages> {
                     ],
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 30,
-                    vertical: 20,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        product.namaProduk,
-                        style: AssetStyles.t2,
+                verticalSpace(20),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 30,
                       ),
-                      verticalSpace(10),
-                      Text(
-                        "\$ ${product.hargaProduk}",
-                        style: AssetStyles.labelMdRegular.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      verticalSpace(20),
-                      const Divider(),
-                      verticalSpace(10),
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "Color",
-                              style: AssetStyles.labelMdRegular.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const TextSpan(
-                              text: " Gray",
-                              style: AssetStyles.labelMdRegular,
-                            ),
-                          ],
-                        ),
-                      ),
-                      verticalSpace(20),
-                      Row(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          ...product.pilihanWarna.map(
-                            (e) => Container(
-                              margin: const EdgeInsets.only(
-                                right: 10,
-                              ),
-                              width: 25,
-                              height: 25,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: e,
-                              ),
+                          Text(
+                            product.namaProduk,
+                            style: AssetStyles.t2,
+                          ),
+                          verticalSpace(10),
+                          Text(
+                            "\$ ${product.hargaProduk}",
+                            style: AssetStyles.labelMdRegular.copyWith(
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ],
                       ),
-                      verticalSpace(20),
-                      Text(
-                        "Size",
-                        style: AssetStyles.labelMdRegular.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                    ),
+                    verticalSpace(24),
+                    const Divider(),
+                    verticalSpace(24),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 30,
                       ),
-                      verticalSpace(20),
-                      SizedBox(
-                        height: 50,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            ...sizes.map(
-                              (e) => SizeItemList(
-                                data: e,
-                              ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "Color",
+                                  style: AssetStyles.labelMdRegular.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const TextSpan(
+                                  text: " Gray",
+                                  style: AssetStyles.labelMdRegular,
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                          verticalSpace(20),
+                          Row(
+                            children: [
+                              ...product.pilihanWarna.map(
+                                (e) => Container(
+                                  margin: const EdgeInsets.only(
+                                    right: 10,
+                                  ),
+                                  width: 25,
+                                  height: 25,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: e,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          verticalSpace(20),
+                          Text(
+                            "Size",
+                            style: AssetStyles.labelMdRegular.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          verticalSpace(20),
+                          SizedBox(
+                            height: 50,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                ...sizes.map(
+                                  (e) => SizeItemList(
+                                    data: e,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          verticalSpace(20),
+                          SizedBox(
+                            child: Text(
+                              product.deskripsiProduk,
+                              style: AssetStyles.labelMdRegular,
+                            ),
+                          ),
+                        ],
                       ),
-                      verticalSpace(20),
-                      SizedBox(
-                        child: Text(
-                          product.deskripsiProduk,
-                          style: AssetStyles.labelMdRegular,
-                        ),
-                      ),
-                      verticalSpace(30),
-                    ],
-                  ),
+                    ),
+                    verticalSpace(70),
+                  ],
                 ),
               ],
             ),

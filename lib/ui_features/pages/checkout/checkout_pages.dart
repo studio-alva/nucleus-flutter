@@ -100,9 +100,12 @@ class CheckoutPages extends StatelessWidget {
                         thickness: 2,
                       ),
                       verticalSpace(10),
-                      const ListCheckout(
+                      ListCheckout(
                         leftText: "Total amount",
                         rightText: "\$43.00",
+                        stlyeRightText: AssetStyles.labelMdRegular.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
