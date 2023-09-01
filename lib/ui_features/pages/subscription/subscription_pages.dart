@@ -45,69 +45,72 @@ class SubScriptionPages extends StatelessWidget {
             ),
           ),
           verticalSpace(20),
-          CarouselSlider(
-            options: CarouselOptions(
-              disableCenter: true,
-              enlargeCenterPage: true,
-              aspectRatio: 1.1,
-              enableInfiniteScroll: false,
-            ),
-            items: [1, 2, 3].map((e) {
-              return Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 30,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: AssetColors.skyWhite,
-                ),
-                child: Column(
-                  children: [
-                    const Text(
-                      "POPULAR",
-                      style: AssetStyles.labelTinyReguler,
-                    ),
-                    verticalSpace(15),
-                    Text(
-                      "Exercise Class",
-                      style: AssetStyles.labelLgRegular.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    verticalSpace(15),
-                    const Text(
-                      "\$60.99",
-                      style: AssetStyles.t1,
-                    ),
-                    verticalSpace(15),
-                    const Text(
-                      "For 1 Year",
-                      style: AssetStyles.labelTinyReguler,
-                    ),
-                    const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 50),
-                      child: const Text(
-                        "iOS, Android, Apple TV, Roku,\nAmazon Fire TV, web browser",
+          SizedBox(
+            height: 352,
+            child: CarouselSlider(
+              options: CarouselOptions(
+                disableCenter: true,
+                enlargeCenterPage: true,
+                aspectRatio: 1,
+                enableInfiniteScroll: false,
+              ),
+              items: [1, 2, 3].map((e) {
+                return Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 30,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: AssetColors.skyWhite,
+                  ),
+                  child: Column(
+                    children: [
+                      const Text(
+                        "POPULAR",
                         style: AssetStyles.labelTinyReguler,
-                        textAlign: TextAlign.center,
                       ),
-                    ),
-                    verticalSpace(20),
-                    ButtonPrimary(
-                      onTap: () {
-                        print("asd");
-                      },
-                      width: screenWidth(context),
-                      color: AssetColors.primaryBase,
-                      text: "Subscribe",
-                      height: 50,
-                    ),
-                  ],
-                ),
-              );
-            }).toList(),
+                      verticalSpace(15),
+                      Text(
+                        "Exercise Class",
+                        style: AssetStyles.labelLgRegular.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      verticalSpace(15),
+                      const Text(
+                        "\$60.99",
+                        style: AssetStyles.t1,
+                      ),
+                      verticalSpace(15),
+                      const Text(
+                        "For 1 Year",
+                        style: AssetStyles.labelTinyReguler,
+                      ),
+                      const Spacer(),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        child: const Text(
+                          "iOS, Android, Apple TV, Roku,\nAmazon Fire TV, web browser",
+                          style: AssetStyles.labelTinyReguler,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      verticalSpace(20),
+                      ButtonPrimary(
+                        onTap: () {
+                          print("asd");
+                        },
+                        width: screenWidth(context),
+                        color: AssetColors.primaryBase,
+                        text: "Subscribe",
+                        height: 50,
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
           ),
           verticalSpace(20),
           Container(
