@@ -42,6 +42,7 @@ flutter build apk --release && flutter build web --release
 ```
 4. Enjoy... :)
 
+
 ## What will you get?
 These are lists of Pages that you will get :
 
@@ -95,7 +96,9 @@ These are lists of Pages that you will get :
 4. Location Page
 
 
+
 Download [Nucleus Plus](https://www.nucleus-ui.com/nucleus-plus) for more Components and Unlimited Updates!
 For Business Inquiry, you can contact us at [jason@studioalva.co](mailto:jason@studioalva.co)
+
 
 Copyright 2023. Nucleus Flutter created by [Studio Alva](https://studioalva.co/)
