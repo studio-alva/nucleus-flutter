@@ -28,7 +28,7 @@ Tools that you need to install:
 ```bash
 git clone [Your_Repository_Github]
 ```
-2. Install the package in `pubspec.yaml` with executing command
+2. Install the package in `pubspec.yaml` by executing command
 ```bash
 flutter pub get
 ```
@@ -95,7 +95,7 @@ These are lists of Pages that you will get :
 3. Map Page
 4. Location Page
 
-<br/><br/>
+<br/>
 
 Download [Nucleus Plus](https://www.nucleus-ui.com/nucleus-plus) for more Components and Unlimited Updates!<br/>
 For Business Inquiry, you can contact us at [jason@studioalva.co](mailto:jason@studioalva.co)
